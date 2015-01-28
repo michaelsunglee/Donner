@@ -18,5 +18,7 @@
 @property (assign, nonatomic) IBOutlet UILabel *workLeft;
 @property (assign, nonatomic) IBOutlet UIButton *startButton;
 
+@property (assign, nonatomic) NSTimer *timer;
+
 @end
 
