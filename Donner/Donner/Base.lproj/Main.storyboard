@@ -28,13 +28,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I will run " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJk-1g-xKb">
-                                <rect key="frame" x="31" y="101" width="110.5" height="32.5"/>
+                                <rect key="frame" x="51" y="101" width="110.5" height="32.5"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rxp-U3-txJ">
-                                <rect key="frame" x="149" y="103" width="50" height="30"/>
+                                <rect key="frame" x="169" y="103" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="1Zy-S5-rVK"/>
                                 </constraints>
@@ -42,7 +42,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J2D-gZ-BYk">
-                                <rect key="frame" x="402" y="150" width="50" height="30"/>
+                                <rect key="frame" x="96" y="150" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="UqP-rS-7iu"/>
                                 </constraints>
@@ -50,19 +50,13 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zb-3g-vGN">
-                                <rect key="frame" x="207" y="101" width="37.5" height="32.5"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgE-oI-tDY">
-                                <rect key="frame" x="372" y="149" width="22" height="32.5"/>
+                                <rect key="frame" x="227" y="101" width="37.5" height="32.5"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6k-sj-k2N">
-                                <rect key="frame" x="460" y="148" width="98.5" height="32.5"/>
+                                <rect key="frame" x="154" y="148" width="98.5" height="32.5"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -116,8 +110,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                                  " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apT-za-scr">
-                                <rect key="frame" x="205" y="507" width="189.5" height="23"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="20"/>
+                                <rect key="frame" x="162.5" y="486.5" width="274.5" height="33.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgE-oI-tDY">
+                                <rect key="frame" x="66" y="149" width="22" height="32.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -133,7 +133,7 @@
                             <constraint firstItem="BqY-zj-FNt" firstAttribute="top" secondItem="b7P-vY-Z4w" secondAttribute="bottom" constant="25" id="7ca-k0-P40"/>
                             <constraint firstItem="CaE-uM-0yy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="8mA-vp-PqV"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="C7n-Il-bjp" secondAttribute="bottom" constant="10" id="A8g-l3-JTH"/>
-                            <constraint firstItem="UJk-1g-xKb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="BAh-aA-BKj"/>
+                            <constraint firstItem="UJk-1g-xKb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="35" id="BAh-aA-BKj"/>
                             <constraint firstItem="rxp-U3-txJ" firstAttribute="top" secondItem="CaE-uM-0yy" secondAttribute="bottom" constant="25.5" id="DZQ-vv-bIk"/>
                             <constraint firstItem="TgE-oI-tDY" firstAttribute="top" secondItem="1zb-3g-vGN" secondAttribute="bottom" constant="12" id="DaH-hK-qRB"/>
                             <constraint firstItem="UJk-1g-xKb" firstAttribute="top" secondItem="CaE-uM-0yy" secondAttribute="bottom" constant="24" id="Fvg-Qa-ppt"/>
@@ -150,19 +150,21 @@
                             <constraint firstItem="eLv-FF-RKh" firstAttribute="leading" secondItem="b7P-vY-Z4w" secondAttribute="trailing" constant="8" id="Sp2-R7-ITe"/>
                             <constraint firstAttribute="centerX" secondItem="apT-za-scr" secondAttribute="centerX" id="Tgo-da-jZt"/>
                             <constraint firstItem="MIn-BU-cKj" firstAttribute="top" secondItem="TR9-ps-Xyx" secondAttribute="bottom" constant="25.5" id="W7Y-mX-iRE"/>
+                            <constraint firstItem="TgE-oI-tDY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="50" id="WCq-X6-z0f"/>
                             <constraint firstItem="TR9-ps-Xyx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="Xpu-XT-7Ay"/>
                             <constraint firstItem="J2D-gZ-BYk" firstAttribute="leading" secondItem="TgE-oI-tDY" secondAttribute="trailing" constant="7.5" id="Y62-7g-rlT"/>
                             <constraint firstItem="UJk-1g-xKb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="32" id="ZnN-R1-vJe"/>
                             <constraint firstItem="1zb-3g-vGN" firstAttribute="leading" secondItem="rxp-U3-txJ" secondAttribute="trailing" constant="8" id="aWM-Xh-qIx"/>
                             <constraint firstItem="1zb-3g-vGN" firstAttribute="top" secondItem="CaE-uM-0yy" secondAttribute="bottom" constant="24" id="fAy-4U-Ckc"/>
                             <constraint firstItem="eLv-FF-RKh" firstAttribute="top" secondItem="MIn-BU-cKj" secondAttribute="bottom" constant="36" id="hGV-yC-ctg"/>
-                            <constraint firstItem="C7n-Il-bjp" firstAttribute="top" secondItem="apT-za-scr" secondAttribute="bottom" constant="15" id="iJS-Rq-vcb"/>
+                            <constraint firstItem="C7n-Il-bjp" firstAttribute="top" secondItem="apT-za-scr" secondAttribute="bottom" constant="25" id="iJS-Rq-vcb"/>
                             <constraint firstItem="BqY-zj-FNt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="kST-oV-ChB"/>
+                            <constraint firstItem="V6k-sj-k2N" firstAttribute="leading" secondItem="J2D-gZ-BYk" secondAttribute="trailing" constant="15" id="mE5-qd-FHY"/>
                             <constraint firstItem="CaE-uM-0yy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="oAG-qT-d6V"/>
                             <constraint firstAttribute="trailing" secondItem="CaE-uM-0yy" secondAttribute="trailing" id="p0A-gc-ugC"/>
                             <constraint firstItem="b7P-vY-Z4w" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="vFe-R7-vVq"/>
                             <constraint firstItem="TR9-ps-Xyx" firstAttribute="top" secondItem="UJk-1g-xKb" secondAttribute="bottom" constant="90" id="wNs-wH-q3x"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="V6k-sj-k2N" secondAttribute="trailing" constant="25" id="xh9-fu-Ywx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V6k-sj-k2N" secondAttribute="trailing" constant="15" id="xh9-fu-Ywx"/>
                             <constraint firstAttribute="centerX" secondItem="C7n-Il-bjp" secondAttribute="centerX" id="zSN-lc-vUl"/>
                         </constraints>
                         <variation key="default">
@@ -175,6 +177,8 @@
                                 <exclude reference="JYP-5b-tr3"/>
                                 <exclude reference="DaH-hK-qRB"/>
                                 <exclude reference="Y62-7g-rlT"/>
+                                <exclude reference="mE5-qd-FHY"/>
+                                <exclude reference="xh9-fu-Ywx"/>
                                 <exclude reference="RhU-21-hwf"/>
                             </mask>
                         </variation>

@@ -17,6 +17,7 @@
     NSInteger minutesLeft;
     NSDate *currentDate;
     BOOL pressedOnce;
+    BOOL timeUp;
 }
 
 @property (nonatomic, strong) NSDate *startTime;
@@ -76,10 +77,14 @@
 -(void) updateLabel{
     //update distanceLeft;
     timeLeft = [NSString stringWithFormat:@"%d", minutesLeft];
-    _workLeft.text = distanceLeft;
-    _workLeft.text = [_workLeft.text stringByAppendingString:@"km left in "];
-    _workLeft.text = [_workLeft.text stringByAppendingString:timeLeft];
-    _workLeft.text = [_workLeft.text stringByAppendingString:@" minutes!"];
+    if(timeUp == true){
+        _workLeft.text = @"TIME'S UP";
+    } else{
+        _workLeft.text = distanceLeft;
+        _workLeft.text = [_workLeft.text stringByAppendingString:@"km left in "];
+        _workLeft.text = [_workLeft.text stringByAppendingString:timeLeft];
+        _workLeft.text = [_workLeft.text stringByAppendingString:@" minutes!"];
+    }
 }
 
 -(void)testTimer{
@@ -88,6 +93,9 @@
     if(tally == 12){
         tally = 0;
         minutesLeft = minutesLeft - 1;
+        if(minutesLeft == 0){
+            timeUp = true;
+        }
         [self updateLabel];
     }
 }
