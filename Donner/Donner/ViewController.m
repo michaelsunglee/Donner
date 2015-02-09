@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <Fabric/Fabric.h>
+#import <TwitterKit/TwitterKit.h>
 
 @interface ViewController ()
 {
@@ -27,15 +29,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_FBShame setTintColor:[UIColor colorWithRed:218.0f/255.0f
+    [_TwitterShame setTintColor:[UIColor colorWithRed:218.0f/255.0f
                                            green:73.0f/255.0f
                                             blue:54.0f/255.0f
                                            alpha:1.0f]];
-    [_FBShame setBackgroundColor:[UIColor colorWithRed:218.0f/255.0f
+    [_TwitterShame setBackgroundColor:[UIColor colorWithRed:218.0f/255.0f
                                                  green:73.0f/255.0f
                                                   blue:54.0f/255.0f
                                                  alpha:1.0f]];
-    _FBShame.layer.cornerRadius = 16.0;
+    _TwitterShame.layer.cornerRadius = 16.0;
     [_LinkedInShame setTintColor:[UIColor colorWithRed:218.0f/255.0f
                                            green:73.0f/255.0f
                                             blue:54.0f/255.0f
@@ -54,6 +56,22 @@
                                                   blue:54.0f/255.0f
                                                  alpha:1.0f]];
     _Donate.layer.cornerRadius = 16.0;
+    PFUser *user = [PFUser user];
+    user.username = @"my name";
+    user.password = @"my pass";
+    user.email = @"email@example.com";
+    
+    // other fields can be set if you want to save more information
+    user[@"phone"] = @"650-555-0000";
+    
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            // Hooray! Let them use the app now.
+        } else {
+            NSString *errorString = [error userInfo][@"error"];
+            // Show the errorString somewhere and let the user try again.
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -116,6 +134,12 @@
     //Format the elapsed time and update label
    // NSString *TimeString = [dateFormatter stringFromDate:TimerDate];
     //minutesLeft= minutesLeft-1;
+}
+
+-(IBAction)wantTwitterShame:(id)sender
+{
+    NSLog(@"User wants twitter shame!");
+    
 }
 
 -(IBAction)startPressed:(id)sender

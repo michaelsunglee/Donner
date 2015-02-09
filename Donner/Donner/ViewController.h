@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface ViewController : UIViewController
 
-@property (assign, nonatomic) IBOutlet UISwitch *FBShame;
+@property (assign, nonatomic) IBOutlet UISwitch *TwitterShame;
 @property (assign, nonatomic) IBOutlet UISwitch *LinkedInShame;
 @property (assign, nonatomic) IBOutlet UISwitch *Donate;
 @property (assign, nonatomic) IBOutlet UITextField *kmGoal;

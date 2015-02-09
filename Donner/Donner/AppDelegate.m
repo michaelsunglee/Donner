@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <Fabric/Fabric.h>
+#import <TwitterKit/TwitterKit.h>
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +20,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    [Fabric with:@[TwitterKit]];
+    [Parse setApplicationId:@"It9yNT4bL3UdJABvEApMgpHWdMExGkHdmnoHHsQv"
+                  clientKey:@"VdXB1JIi3I4OMEXereebxQfRtrL0wW7minGaRWap"];
+    [PFTwitterUtils initializeWithConsumerKey:@"pJcZrRKX9pyZhI9lvRhNagZNO"
+                               consumerSecret:@"xUr5HbVUPywK4cjFmixCbP1Px9e7SYtZmWOsaS25nXJSIGQT29"];
+    [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Twitter login.");
+            return;
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in with Twitter!");
+        } else {
+            NSLog(@"User logged in with Twitter!");
+        }
+    }];
+
+    
     return YES;
 }
 
