@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
+#import <FacebookSDK/FacebookSDK.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <Parse/Parse.h>
 
 @interface AppDelegate ()
@@ -28,6 +30,7 @@
     NSString *clientKey = [dictionary objectForKey:@"parseClientKey"];
     NSString *consumerKey = [dictionary objectForKey:@"twitterConsumerKey"];
     NSString *secretKey = [dictionary objectForKey:@"twitterSecretKey"];
+    //NSString *fbAppKey = [dictionary objectForKey:@"FacebookAppID"];
     //
     [Parse setApplicationId:applicationId
                   clientKey:clientKey];
@@ -35,7 +38,7 @@
                                consumerSecret:secretKey];
     
     
-    
+    //Trigger method for Twitter Auth
     [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
         if (!user) {
             NSLog(@"Uh oh. The user cancelled the Twitter login.");
@@ -48,7 +51,48 @@
     }];
     
     
+    //Starting Facebook Auth
+    [Parse setApplicationId:applicationId clientKey:clientKey];
+    [PFFacebookUtils initializeFacebook];
+    
+    //Trigger method for Facebook Auth
+    NSArray *permissionsArray = @[@"user_about_me"];
+    
+    [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in through Facebook!");
+        } else {
+            NSLog(@"User logged in through Facebook!");
+        }
+    }];
+    /*
+    [PFFacebookUtils reauthorizeUser:[PFUser currentUser]
+              withPublishPermissions:@[@"publish_actions"]
+                            audience:FBSessionDefaultAudienceFriends
+                               block:^(BOOL succeeded, NSError *error) {
+                                   if (succeeded) {
+                                       // Your app now has publishing permissions for the user
+                                   }
+                               }];
+     */
+
+    
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [FBAppCall handleOpenURL:url
+                  sourceApplication:sourceApplication
+                        withSession:[PFFacebookUtils session]];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -65,9 +109,10 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
+/*- (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
+ */
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		902D0CD81A89B27D0049DB9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 902D0CD71A89B27D0049DB9C /* AppDelegate.m */; };
+		902D0CDA1A9715000049DB9C /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 902D0CD91A9715000049DB9C /* Keys.plist */; };
+		902D0CDE1A9815FA0049DB9C /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902D0CDD1A9815FA0049DB9C /* FacebookSDK.framework */; };
+		902D0CE21A984C8A0049DB9C /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902D0CE11A984C8A0049DB9C /* ParseFacebookUtils.framework */; };
 		90B09C811A7733D7009602A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B09C801A7733D7009602A2 /* main.m */; };
 		90B09C871A7733D7009602A2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B09C861A7733D7009602A2 /* ViewController.m */; };
 		90B09C8A1A7733D7009602A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B09C881A7733D7009602A2 /* Main.storyboard */; };
@@ -46,6 +49,9 @@
 
 /* Begin PBXFileReference section */
 		902D0CD71A89B27D0049DB9C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		902D0CD91A9715000049DB9C /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = SOURCE_ROOT; };
+		902D0CDD1A9815FA0049DB9C /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		902D0CE11A984C8A0049DB9C /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		90B09C7B1A7733D7009602A2 /* Donner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B09C7F1A7733D7009602A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90B09C801A7733D7009602A2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -88,6 +94,8 @@
 				90B9D8581A88380A00C24BCB /* CFNetwork.framework in Frameworks */,
 				90B9D8591A88380A00C24BCB /* CoreGraphics.framework in Frameworks */,
 				90B9D85A1A88380A00C24BCB /* CoreLocation.framework in Frameworks */,
+				902D0CE21A984C8A0049DB9C /* ParseFacebookUtils.framework in Frameworks */,
+				902D0CDE1A9815FA0049DB9C /* FacebookSDK.framework in Frameworks */,
 				90B9D85B1A88380A00C24BCB /* libsqlite3.dylib in Frameworks */,
 				90B9D85C1A88380A00C24BCB /* libz.1.dylib in Frameworks */,
 				90B9D85D1A88380A00C24BCB /* MobileCoreServices.framework in Frameworks */,
@@ -116,6 +124,8 @@
 		90B09C721A7733D7009602A2 = {
 			isa = PBXGroup;
 			children = (
+				902D0CE11A984C8A0049DB9C /* ParseFacebookUtils.framework */,
+				902D0CDD1A9815FA0049DB9C /* FacebookSDK.framework */,
 				90B9D8491A88380A00C24BCB /* Accounts.framework */,
 				90B9D84A1A88380A00C24BCB /* AudioToolbox.framework */,
 				90B9D84B1A88380A00C24BCB /* CFNetwork.framework */,
@@ -167,6 +177,7 @@
 		90B09C7E1A7733D7009602A2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				902D0CD91A9715000049DB9C /* Keys.plist */,
 				90B09C7F1A7733D7009602A2 /* Info.plist */,
 				90B09C801A7733D7009602A2 /* main.m */,
 			);
@@ -275,6 +286,7 @@
 				90B09C8A1A7733D7009602A2 /* Main.storyboard in Resources */,
 				90B09C8F1A7733D7009602A2 /* LaunchScreen.xib in Resources */,
 				90B09C8C1A7733D7009602A2 /* Images.xcassets in Resources */,
+				902D0CDA1A9715000049DB9C /* Keys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +447,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/MichaelLee/Documents/FacebookSDK,
+					"/Users/MichaelLee/Downloads/parse-library-1.6.3",
 				);
 				INFOPLIST_FILE = Donner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -449,6 +463,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/MichaelLee/Documents/FacebookSDK,
+					"/Users/MichaelLee/Downloads/parse-library-1.6.3",
 				);
 				INFOPLIST_FILE = Donner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
