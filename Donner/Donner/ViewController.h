@@ -11,13 +11,13 @@
 
 @interface ViewController : UIViewController
 
-@property (assign, nonatomic) IBOutlet UISwitch *TwitterShame;
-@property (assign, nonatomic) IBOutlet UISwitch *LinkedInShame;
-@property (assign, nonatomic) IBOutlet UISwitch *Donate;
 @property (assign, nonatomic) IBOutlet UITextField *kmGoal;
 @property (assign, nonatomic) IBOutlet UITextField *minutesGoal;
 @property (assign, nonatomic) IBOutlet UILabel *workLeft;
 @property (assign, nonatomic) IBOutlet UIButton *startButton;
+@property (assign, nonatomic) IBOutlet UIButton *twitterButton;
+@property (assign, nonatomic) IBOutlet UIButton *facebookButton;
+@property (assign, nonatomic) IBOutlet UIButton *linkedInButton;
 
 @property (assign, nonatomic) NSTimer *timer;
 

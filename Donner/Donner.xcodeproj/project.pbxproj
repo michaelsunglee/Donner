@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90175B171AF3184600AC513D /* UIButton+buttonPressed.m in Sources */ = {isa = PBXBuildFile; fileRef = 90175B161AF3184600AC513D /* UIButton+buttonPressed.m */; };
 		902D0CD81A89B27D0049DB9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 902D0CD71A89B27D0049DB9C /* AppDelegate.m */; };
 		902D0CDA1A9715000049DB9C /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 902D0CD91A9715000049DB9C /* Keys.plist */; };
 		902D0CDE1A9815FA0049DB9C /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902D0CDD1A9815FA0049DB9C /* FacebookSDK.framework */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		90175B151AF3184600AC513D /* UIButton+buttonPressed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+buttonPressed.h"; sourceTree = "<group>"; };
+		90175B161AF3184600AC513D /* UIButton+buttonPressed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+buttonPressed.m"; sourceTree = "<group>"; };
 		902D0CD71A89B27D0049DB9C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		902D0CD91A9715000049DB9C /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = SOURCE_ROOT; };
 		902D0CDD1A9815FA0049DB9C /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 		90B09C7D1A7733D7009602A2 /* Donner */ = {
 			isa = PBXGroup;
 			children = (
+				90175B151AF3184600AC513D /* UIButton+buttonPressed.h */,
+				90175B161AF3184600AC513D /* UIButton+buttonPressed.m */,
 				902D0CD71A89B27D0049DB9C /* AppDelegate.m */,
 				90B09C821A7733D7009602A2 /* AppDelegate.h */,
 				90B09C851A7733D7009602A2 /* ViewController.h */,
@@ -322,6 +327,7 @@
 			files = (
 				90B09C871A7733D7009602A2 /* ViewController.m in Sources */,
 				90B09C811A7733D7009602A2 /* main.m in Sources */,
+				90175B171AF3184600AC513D /* UIButton+buttonPressed.m in Sources */,
 				902D0CD81A89B27D0049DB9C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

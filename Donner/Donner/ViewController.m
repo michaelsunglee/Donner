@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "UIButton+buttonPressed.h"
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @interface ViewController ()
 {
@@ -23,39 +25,13 @@
 }
 
 @property (nonatomic, strong) NSDate *startTime;
+@property (nonatomic, readonly, retain) UIImage *currentBackgroundImage;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_TwitterShame setTintColor:[UIColor colorWithRed:218.0f/255.0f
-                                           green:73.0f/255.0f
-                                            blue:54.0f/255.0f
-                                           alpha:1.0f]];
-    [_TwitterShame setBackgroundColor:[UIColor colorWithRed:218.0f/255.0f
-                                                 green:73.0f/255.0f
-                                                  blue:54.0f/255.0f
-                                                 alpha:1.0f]];
-    _TwitterShame.layer.cornerRadius = 16.0;
-    [_LinkedInShame setTintColor:[UIColor colorWithRed:218.0f/255.0f
-                                           green:73.0f/255.0f
-                                            blue:54.0f/255.0f
-                                           alpha:1.0f]];
-    [_LinkedInShame setBackgroundColor:[UIColor colorWithRed:218.0f/255.0f
-                                                 green:73.0f/255.0f
-                                                  blue:54.0f/255.0f
-                                                 alpha:1.0f]];
-    _LinkedInShame.layer.cornerRadius = 16.0;
-    [_Donate setTintColor:[UIColor colorWithRed:218.0f/255.0f
-                                           green:73.0f/255.0f
-                                            blue:54.0f/255.0f
-                                           alpha:1.0f]];
-    [_Donate setBackgroundColor:[UIColor colorWithRed:218.0f/255.0f
-                                                 green:73.0f/255.0f
-                                                  blue:54.0f/255.0f
-                                                 alpha:1.0f]];
-    _Donate.layer.cornerRadius = 16.0;
     PFUser *user = [PFUser user];
     user.username = @"my name";
     user.password = @"my pass";
@@ -63,8 +39,9 @@
     
     // other fields can be set if you want to save more information
     user[@"phone"] = @"650-555-0000";
-    
-    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+   
+    /*
+     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
             // Hooray! Let them use the app now.
         } else {
@@ -72,6 +49,7 @@
             // Show the errorString somewhere and let the user try again.
         }
     }];
+     */
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,7 +65,7 @@
 
 -(void) initiateTimer{
     if(timerStart == true && pressedOnce == false){
-        timeLeft = [NSString stringWithFormat:@"%d",minutesLeft];
+        timeLeft = [NSString stringWithFormat:@"%d", minutesLeft];
         pressedOnce = true;
     }
 }
@@ -107,7 +85,7 @@
 
 -(void)testTimer{
     NSLog(@"HERE");
-    tally = tally + 1;
+    ++tally;
     if(tally == 12){
         tally = 0;
         minutesLeft = minutesLeft - 1;
@@ -139,7 +117,6 @@
 -(IBAction)wantTwitterShame:(id)sender
 {
     NSLog(@"User wants twitter shame!");
-    
 }
 
 -(IBAction)startPressed:(id)sender
@@ -156,6 +133,18 @@
     _workLeft.text = [_workLeft.text stringByAppendingString:@" minutes!"];
     [self initiateTimer];
     [self updateTimer];
+}
+
+-(IBAction)didPressTwitterButton:(id)sender{
+    [_twitterButton didPressButton:_twitterButton];
+}
+
+-(IBAction)didPressFacebookButton:(id)sender{
+    [_facebookButton didPressButton:_facebookButton];
+}
+
+-(IBAction)didPressLinkedInButton:(id)sender{
+    [_linkedInButton didPressButton:_linkedInButton];
 }
 
 @end

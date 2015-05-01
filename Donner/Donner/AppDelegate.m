@@ -39,6 +39,7 @@
     
     
     //Trigger method for Twitter Auth
+    /*
     [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
         if (!user) {
             NSLog(@"Uh oh. The user cancelled the Twitter login.");
@@ -49,11 +50,13 @@
             NSLog(@"User logged in with Twitter!");
         }
     }];
-    
+     */
     
     //Starting Facebook Auth
+    /*
     [Parse setApplicationId:applicationId clientKey:clientKey];
     [PFFacebookUtils initializeFacebook];
+     
     
     //Trigger method for Facebook Auth
     NSArray *permissionsArray = @[@"user_about_me"];
@@ -67,6 +70,7 @@
             NSLog(@"User logged in through Facebook!");
         }
     }];
+     */
     /*
     [PFFacebookUtils reauthorizeUser:[PFUser currentUser]
               withPublishPermissions:@[@"publish_actions"]

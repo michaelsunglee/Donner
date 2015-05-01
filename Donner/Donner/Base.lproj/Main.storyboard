@@ -17,9 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" text="Donner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaE-uM-0yy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaE-uM-0yy">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="78"/>
-                                <color key="backgroundColor" red="0.85490196078431369" green="0.28627450980392155" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.20266062062936993" green="0.703125" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="77.5" id="wgI-0P-l7O"/>
                                 </constraints>
@@ -62,26 +62,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="OR ELSE:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TR9-ps-Xyx">
-                                <rect key="frame" x="31" y="223" width="123" height="33"/>
+                                <rect key="frame" x="31" y="218" width="280" height="33"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uoa-ud-qzB">
-                                <rect key="frame" x="31" y="275" width="51" height="31"/>
-                                <connections>
-                                    <action selector="wantTwitterShame:" destination="vXZ-lx-hvc" eventType="valueChanged" id="shz-dQ-mUr"/>
-                                </connections>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b7P-vY-Z4w">
-                                <rect key="frame" x="31" y="331" width="51" height="31"/>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BqY-zj-FNt">
-                                <rect key="frame" x="31" y="387" width="51" height="31"/>
-                            </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7n-Il-bjp">
                                 <rect key="frame" x="224" y="545" width="152" height="45"/>
-                                <color key="backgroundColor" red="0.85490196078431369" green="0.28627450980392155" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.20392156862745098" green="0.70196078431372544" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="152" id="B6r-0o-p1v"/>
                                 </constraints>
@@ -94,46 +82,62 @@
                                     <action selector="startPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ztv-1Y-QR2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Twitter Shame" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIn-BU-cKj">
-                                <rect key="frame" x="88" y="281" width="107" height="20"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LinkedIn Shame" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLv-FF-RKh">
-                                <rect key="frame" x="88" y="337" width="123" height="20"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Donate to DonorsChoose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vy6-xL-biN">
-                                <rect key="frame" x="88" y="393" width="192" height="20"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                                  " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apT-za-scr">
-                                <rect key="frame" x="163" y="486" width="275" height="34"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="29"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgE-oI-tDY">
                                 <rect key="frame" x="66" y="149" width="22" height="33"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0y-q8-r3T">
+                                <rect key="frame" x="218" y="260" width="164" height="53"/>
+                                <color key="backgroundColor" red="0.63529411764705879" green="0.63529411764705879" blue="0.63529411764705879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Twitter Shame">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressTwitterButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8fN-jh-u8O"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                                  " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apT-za-scr">
+                                <rect key="frame" x="163" y="486" width="274.5" height="33.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rnz-OS-0b0">
+                                <rect key="frame" x="218" y="425" width="164" height="53"/>
+                                <color key="backgroundColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="LinkedIn Shame">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressLinkedInButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="peK-vv-iaa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOu-Z4-ve7">
+                                <rect key="frame" x="218" y="340" width="164" height="53"/>
+                                <color key="backgroundColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Facebook Shame">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressFacebookButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rbW-IV-pId"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.92549019607843142" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="uoa-ud-qzB" firstAttribute="top" secondItem="TR9-ps-Xyx" secondAttribute="bottom" constant="20" id="0Ov-mg-g6j"/>
                             <constraint firstItem="rxp-U3-txJ" firstAttribute="leading" secondItem="UJk-1g-xKb" secondAttribute="trailing" constant="7.5" id="168-v4-l2i"/>
                             <constraint firstItem="V6k-sj-k2N" firstAttribute="top" secondItem="1zb-3g-vGN" secondAttribute="bottom" constant="15" id="2yn-bN-LYD"/>
                             <constraint firstItem="V6k-sj-k2N" firstAttribute="leading" secondItem="J2D-gZ-BYk" secondAttribute="trailing" constant="8" id="4dl-qO-zVq"/>
                             <constraint firstAttribute="right" secondItem="CaE-uM-0yy" secondAttribute="rightMargin" id="72r-QR-WhJ"/>
                             <constraint firstItem="J2D-gZ-BYk" firstAttribute="centerY" secondItem="V6k-sj-k2N" secondAttribute="centerY" id="78V-5o-PfX"/>
-                            <constraint firstItem="BqY-zj-FNt" firstAttribute="top" secondItem="b7P-vY-Z4w" secondAttribute="bottom" constant="25" id="7ca-k0-P40"/>
                             <constraint firstItem="CaE-uM-0yy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="8mA-vp-PqV"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="C7n-Il-bjp" secondAttribute="bottom" constant="10" id="A8g-l3-JTH"/>
                             <constraint firstItem="UJk-1g-xKb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="35" id="BAh-aA-BKj"/>
@@ -141,31 +145,26 @@
                             <constraint firstItem="TgE-oI-tDY" firstAttribute="top" secondItem="1zb-3g-vGN" secondAttribute="bottom" constant="12" id="DaH-hK-qRB"/>
                             <constraint firstItem="UJk-1g-xKb" firstAttribute="top" secondItem="CaE-uM-0yy" secondAttribute="bottom" constant="24" id="Fvg-Qa-ppt"/>
                             <constraint firstItem="J2D-gZ-BYk" firstAttribute="centerY" secondItem="TgE-oI-tDY" secondAttribute="centerY" id="H4D-AQ-N5m"/>
-                            <constraint firstItem="MIn-BU-cKj" firstAttribute="leading" secondItem="uoa-ud-qzB" secondAttribute="trailing" constant="8" id="JYP-5b-tr3"/>
+                            <constraint firstItem="Rnz-OS-0b0" firstAttribute="centerX" secondItem="fOu-Z4-ve7" secondAttribute="centerX" id="Kgw-pQ-hW0"/>
                             <constraint firstItem="rxp-U3-txJ" firstAttribute="leading" secondItem="UJk-1g-xKb" secondAttribute="trailing" constant="7.5" id="Lh3-wQ-H5D"/>
-                            <constraint firstItem="MIn-BU-cKj" firstAttribute="leading" secondItem="uoa-ud-qzB" secondAttribute="trailing" constant="8" id="M6m-YV-RPo"/>
-                            <constraint firstItem="b7P-vY-Z4w" firstAttribute="top" secondItem="uoa-ud-qzB" secondAttribute="bottom" constant="25" id="NLP-Lb-CUF"/>
-                            <constraint firstItem="uoa-ud-qzB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="Ni2-IQ-new"/>
                             <constraint firstItem="J2D-gZ-BYk" firstAttribute="leading" secondItem="TgE-oI-tDY" secondAttribute="trailing" constant="8" id="Q9m-zS-Cas"/>
                             <constraint firstItem="CaE-uM-0yy" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="R9b-x5-kgp"/>
                             <constraint firstItem="rxp-U3-txJ" firstAttribute="leading" secondItem="UJk-1g-xKb" secondAttribute="trailing" constant="7.5" id="RZL-GE-RTI"/>
                             <constraint firstItem="apT-za-scr" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="188" id="RhU-21-hwf"/>
-                            <constraint firstItem="eLv-FF-RKh" firstAttribute="leading" secondItem="b7P-vY-Z4w" secondAttribute="trailing" constant="8" id="Sp2-R7-ITe"/>
                             <constraint firstAttribute="centerX" secondItem="apT-za-scr" secondAttribute="centerX" id="Tgo-da-jZt"/>
-                            <constraint firstItem="MIn-BU-cKj" firstAttribute="top" secondItem="TR9-ps-Xyx" secondAttribute="bottom" constant="25.5" id="W7Y-mX-iRE"/>
                             <constraint firstItem="TgE-oI-tDY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="50" id="WCq-X6-z0f"/>
                             <constraint firstItem="TR9-ps-Xyx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="Xpu-XT-7Ay"/>
                             <constraint firstItem="J2D-gZ-BYk" firstAttribute="leading" secondItem="TgE-oI-tDY" secondAttribute="trailing" constant="7.5" id="Y62-7g-rlT"/>
                             <constraint firstItem="UJk-1g-xKb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="32" id="ZnN-R1-vJe"/>
                             <constraint firstItem="1zb-3g-vGN" firstAttribute="leading" secondItem="rxp-U3-txJ" secondAttribute="trailing" constant="8" id="aWM-Xh-qIx"/>
                             <constraint firstItem="1zb-3g-vGN" firstAttribute="top" secondItem="CaE-uM-0yy" secondAttribute="bottom" constant="24" id="fAy-4U-Ckc"/>
-                            <constraint firstItem="eLv-FF-RKh" firstAttribute="top" secondItem="MIn-BU-cKj" secondAttribute="bottom" constant="36" id="hGV-yC-ctg"/>
                             <constraint firstItem="C7n-Il-bjp" firstAttribute="top" secondItem="apT-za-scr" secondAttribute="bottom" constant="25" id="iJS-Rq-vcb"/>
-                            <constraint firstItem="BqY-zj-FNt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="kST-oV-ChB"/>
+                            <constraint firstItem="Rnz-OS-0b0" firstAttribute="centerX" secondItem="Z0y-q8-r3T" secondAttribute="centerX" id="kw2-aJ-D9R"/>
+                            <constraint firstItem="Z0y-q8-r3T" firstAttribute="top" secondItem="V6k-sj-k2N" secondAttribute="bottom" constant="79" id="l88-Il-2xc"/>
                             <constraint firstItem="V6k-sj-k2N" firstAttribute="leading" secondItem="J2D-gZ-BYk" secondAttribute="trailing" constant="15" id="mE5-qd-FHY"/>
                             <constraint firstItem="CaE-uM-0yy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="oAG-qT-d6V"/>
                             <constraint firstAttribute="trailing" secondItem="CaE-uM-0yy" secondAttribute="trailing" id="p0A-gc-ugC"/>
-                            <constraint firstItem="b7P-vY-Z4w" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="vFe-R7-vVq"/>
+                            <constraint firstAttribute="centerX" secondItem="Z0y-q8-r3T" secondAttribute="centerX" id="rTG-8Z-7yV"/>
                             <constraint firstItem="TR9-ps-Xyx" firstAttribute="top" secondItem="UJk-1g-xKb" secondAttribute="bottom" constant="90" id="wNs-wH-q3x"/>
                             <constraint firstAttribute="trailingMargin" secondItem="V6k-sj-k2N" secondAttribute="trailing" constant="15" id="xh9-fu-Ywx"/>
                             <constraint firstAttribute="centerX" secondItem="C7n-Il-bjp" secondAttribute="centerX" id="zSN-lc-vUl"/>
@@ -181,18 +180,17 @@
                                 <exclude reference="RZL-GE-RTI"/>
                                 <exclude reference="mE5-qd-FHY"/>
                                 <exclude reference="xh9-fu-Ywx"/>
-                                <exclude reference="JYP-5b-tr3"/>
                                 <exclude reference="RhU-21-hwf"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="Donate" destination="BqY-zj-FNt" id="Wps-1q-azD"/>
-                        <outlet property="LinkedInShame" destination="b7P-vY-Z4w" id="oeP-99-gCU"/>
-                        <outlet property="TwitterShame" destination="uoa-ud-qzB" id="fab-wO-M0E"/>
+                        <outlet property="facebookButton" destination="fOu-Z4-ve7" id="OUJ-9k-kdZ"/>
                         <outlet property="kmGoal" destination="rxp-U3-txJ" id="c3c-W7-ECn"/>
+                        <outlet property="linkedInButton" destination="Rnz-OS-0b0" id="T3B-lF-w72"/>
                         <outlet property="minutesGoal" destination="J2D-gZ-BYk" id="S1k-2j-OiS"/>
                         <outlet property="startButton" destination="C7n-Il-bjp" id="bvR-ES-k7y"/>
+                        <outlet property="twitterButton" destination="Z0y-q8-r3T" id="71B-gO-FFT"/>
                         <outlet property="workLeft" destination="apT-za-scr" id="RFM-At-2SZ"/>
                     </connections>
                 </viewController>
