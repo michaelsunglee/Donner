@@ -61,8 +61,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="OR ELSE:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TR9-ps-Xyx">
-                                <rect key="frame" x="31" y="218" width="280" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR ELSE:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TR9-ps-Xyx">
+                                <rect key="frame" x="31" y="224.5" width="123" height="32.5"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -88,9 +88,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0y-q8-r3T">
-                                <rect key="frame" x="218" y="260" width="164" height="53"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0y-q8-r3T">
+                                <rect key="frame" x="220" y="272" width="160" height="40"/>
                                 <color key="backgroundColor" red="0.63529411764705879" green="0.63529411764705879" blue="0.63529411764705879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="xWy-BT-Wxv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Twitter Shame">
@@ -106,8 +109,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rnz-OS-0b0">
-                                <rect key="frame" x="218" y="425" width="164" height="53"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rnz-OS-0b0">
+                                <rect key="frame" x="220" y="406" width="160" height="40"/>
                                 <color key="backgroundColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -118,14 +121,23 @@
                                     <action selector="didPressLinkedInButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="peK-vv-iaa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOu-Z4-ve7">
-                                <rect key="frame" x="218" y="340" width="164" height="53"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOu-Z4-ve7">
+                                <rect key="frame" x="220" y="339" width="160" height="40"/>
                                 <color key="backgroundColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="ry4-4p-pxU"/>
+                                    <constraint firstAttribute="width" constant="160" id="yW6-xW-lrl"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Facebook Shame">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ry4-4p-pxU"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="didPressFacebookButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rbW-IV-pId"/>
                                 </connections>
@@ -141,12 +153,15 @@
                             <constraint firstItem="CaE-uM-0yy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="8mA-vp-PqV"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="C7n-Il-bjp" secondAttribute="bottom" constant="10" id="A8g-l3-JTH"/>
                             <constraint firstItem="UJk-1g-xKb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="35" id="BAh-aA-BKj"/>
+                            <constraint firstItem="fOu-Z4-ve7" firstAttribute="top" secondItem="Z0y-q8-r3T" secondAttribute="bottom" constant="27" id="ChC-wC-ulq"/>
                             <constraint firstItem="rxp-U3-txJ" firstAttribute="top" secondItem="CaE-uM-0yy" secondAttribute="bottom" constant="25.5" id="DZQ-vv-bIk"/>
                             <constraint firstItem="TgE-oI-tDY" firstAttribute="top" secondItem="1zb-3g-vGN" secondAttribute="bottom" constant="12" id="DaH-hK-qRB"/>
                             <constraint firstItem="UJk-1g-xKb" firstAttribute="top" secondItem="CaE-uM-0yy" secondAttribute="bottom" constant="24" id="Fvg-Qa-ppt"/>
+                            <constraint firstItem="fOu-Z4-ve7" firstAttribute="height" secondItem="Rnz-OS-0b0" secondAttribute="height" id="Gar-MV-yGM"/>
                             <constraint firstItem="J2D-gZ-BYk" firstAttribute="centerY" secondItem="TgE-oI-tDY" secondAttribute="centerY" id="H4D-AQ-N5m"/>
                             <constraint firstItem="Rnz-OS-0b0" firstAttribute="centerX" secondItem="fOu-Z4-ve7" secondAttribute="centerX" id="Kgw-pQ-hW0"/>
                             <constraint firstItem="rxp-U3-txJ" firstAttribute="leading" secondItem="UJk-1g-xKb" secondAttribute="trailing" constant="7.5" id="Lh3-wQ-H5D"/>
+                            <constraint firstItem="fOu-Z4-ve7" firstAttribute="height" secondItem="Z0y-q8-r3T" secondAttribute="height" id="M1i-oT-gcZ"/>
                             <constraint firstItem="J2D-gZ-BYk" firstAttribute="leading" secondItem="TgE-oI-tDY" secondAttribute="trailing" constant="8" id="Q9m-zS-Cas"/>
                             <constraint firstItem="CaE-uM-0yy" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="R9b-x5-kgp"/>
                             <constraint firstItem="rxp-U3-txJ" firstAttribute="leading" secondItem="UJk-1g-xKb" secondAttribute="trailing" constant="7.5" id="RZL-GE-RTI"/>
@@ -157,16 +172,19 @@
                             <constraint firstItem="J2D-gZ-BYk" firstAttribute="leading" secondItem="TgE-oI-tDY" secondAttribute="trailing" constant="7.5" id="Y62-7g-rlT"/>
                             <constraint firstItem="UJk-1g-xKb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="32" id="ZnN-R1-vJe"/>
                             <constraint firstItem="1zb-3g-vGN" firstAttribute="leading" secondItem="rxp-U3-txJ" secondAttribute="trailing" constant="8" id="aWM-Xh-qIx"/>
+                            <constraint firstItem="Rnz-OS-0b0" firstAttribute="top" secondItem="fOu-Z4-ve7" secondAttribute="bottom" constant="27" id="b3o-5X-Fiz"/>
                             <constraint firstItem="1zb-3g-vGN" firstAttribute="top" secondItem="CaE-uM-0yy" secondAttribute="bottom" constant="24" id="fAy-4U-Ckc"/>
                             <constraint firstItem="C7n-Il-bjp" firstAttribute="top" secondItem="apT-za-scr" secondAttribute="bottom" constant="25" id="iJS-Rq-vcb"/>
                             <constraint firstItem="Rnz-OS-0b0" firstAttribute="centerX" secondItem="Z0y-q8-r3T" secondAttribute="centerX" id="kw2-aJ-D9R"/>
-                            <constraint firstItem="Z0y-q8-r3T" firstAttribute="top" secondItem="V6k-sj-k2N" secondAttribute="bottom" constant="79" id="l88-Il-2xc"/>
+                            <constraint firstItem="Z0y-q8-r3T" firstAttribute="top" secondItem="V6k-sj-k2N" secondAttribute="bottom" constant="90" id="l88-Il-2xc"/>
                             <constraint firstItem="V6k-sj-k2N" firstAttribute="leading" secondItem="J2D-gZ-BYk" secondAttribute="trailing" constant="15" id="mE5-qd-FHY"/>
+                            <constraint firstItem="fOu-Z4-ve7" firstAttribute="width" secondItem="Z0y-q8-r3T" secondAttribute="width" id="mqv-pz-Icg"/>
                             <constraint firstItem="CaE-uM-0yy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="oAG-qT-d6V"/>
                             <constraint firstAttribute="trailing" secondItem="CaE-uM-0yy" secondAttribute="trailing" id="p0A-gc-ugC"/>
                             <constraint firstAttribute="centerX" secondItem="Z0y-q8-r3T" secondAttribute="centerX" id="rTG-8Z-7yV"/>
                             <constraint firstItem="TR9-ps-Xyx" firstAttribute="top" secondItem="UJk-1g-xKb" secondAttribute="bottom" constant="90" id="wNs-wH-q3x"/>
                             <constraint firstAttribute="trailingMargin" secondItem="V6k-sj-k2N" secondAttribute="trailing" constant="15" id="xh9-fu-Ywx"/>
+                            <constraint firstItem="fOu-Z4-ve7" firstAttribute="width" secondItem="Rnz-OS-0b0" secondAttribute="width" id="y4M-rf-T6t"/>
                             <constraint firstAttribute="centerX" secondItem="C7n-Il-bjp" secondAttribute="centerX" id="zSN-lc-vUl"/>
                         </constraints>
                         <variation key="default">
