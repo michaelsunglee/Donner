@@ -65,14 +65,14 @@
 
 -(void) initiateTimer{
     if(timerStart == true && pressedOnce == false){
-        timeLeft = [NSString stringWithFormat:@"%d", minutesLeft];
+        timeLeft = [NSString stringWithFormat:@"%ld", minutesLeft];
         pressedOnce = true;
     }
 }
 
 -(void) updateLabel{
     //update distanceLeft;
-    timeLeft = [NSString stringWithFormat:@"%d", minutesLeft];
+    timeLeft = [NSString stringWithFormat:@"%ld", minutesLeft];
     if(timeUp == true){
         _workLeft.text = @"TIME'S UP";
     } else{
