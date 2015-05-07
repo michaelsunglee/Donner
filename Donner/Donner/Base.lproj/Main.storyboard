@@ -236,26 +236,45 @@
                                     <segue destination="9re-3L-NvW" kind="unwind" unwindAction="unwindSegue:" id="LQ6-kt-1JY"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gfv-3r-UpN">
-                                <rect key="frame" x="152" y="184" width="296" height="232"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gfv-3r-UpN">
+                                <rect key="frame" x="16" y="61" width="568" height="452"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="88:13" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6P-RY-W27">
-                                        <rect key="frame" x="78" y="113" width="141" height="79"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="56"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="26 km left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLQ-va-cJh">
+                                        <rect key="frame" x="8" y="22" width="552" height="161"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="112"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="26 km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLQ-va-cJh">
-                                        <rect key="frame" x="71" y="42" width="155" height="63"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="56"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="88:13" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6P-RY-W27">
+                                        <rect key="frame" x="8" y="242" width="552" height="157"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="112"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1v-iG-DfS">
+                                        <rect key="frame" x="238" y="198" width="93" height="55"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="50"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="CLQ-va-cJh" secondAttribute="trailing" constant="8" id="4BT-Ix-7Vz"/>
+                                    <constraint firstAttribute="centerX" secondItem="CLQ-va-cJh" secondAttribute="centerX" id="5ia-wH-T6m"/>
                                     <constraint firstAttribute="width" constant="296" id="Q1o-eV-sAk"/>
+                                    <constraint firstAttribute="centerX" secondItem="g6P-RY-W27" secondAttribute="centerX" id="UoE-IS-EPa"/>
                                     <constraint firstAttribute="height" constant="232" id="Vwe-QO-Ibf"/>
+                                    <constraint firstAttribute="centerX" secondItem="h1v-iG-DfS" secondAttribute="centerX" id="Wg8-2d-n3z"/>
+                                    <constraint firstItem="CLQ-va-cJh" firstAttribute="leading" secondItem="Gfv-3r-UpN" secondAttribute="leading" constant="8" id="azo-rD-c8i"/>
+                                    <constraint firstItem="h1v-iG-DfS" firstAttribute="top" secondItem="CLQ-va-cJh" secondAttribute="bottom" constant="8" symbolic="YES" id="dTJ-OF-9YO"/>
+                                    <constraint firstItem="h1v-iG-DfS" firstAttribute="top" secondItem="CLQ-va-cJh" secondAttribute="bottom" constant="15" id="tPG-Cx-nLb"/>
+                                    <constraint firstItem="CLQ-va-cJh" firstAttribute="top" secondItem="Gfv-3r-UpN" secondAttribute="top" constant="22" id="xTR-wV-RiE"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dTJ-OF-9YO"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.92549019607843142" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
