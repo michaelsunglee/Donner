@@ -13,7 +13,6 @@
 
 @property (assign, nonatomic) IBOutlet UITextField *kmGoal;
 @property (assign, nonatomic) IBOutlet UITextField *minutesGoal;
-@property (assign, nonatomic) IBOutlet UILabel *workLeft;
 @property (assign, nonatomic) IBOutlet UIButton *startButton;
 @property (assign, nonatomic) IBOutlet UIButton *twitterButton;
 @property (assign, nonatomic) IBOutlet UIButton *facebookButton;

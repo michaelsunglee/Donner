@@ -236,23 +236,30 @@
                                     <segue destination="9re-3L-NvW" kind="unwind" unwindAction="unwindSegue:" id="LQ6-kt-1JY"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gfv-3r-UpN">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gfv-3r-UpN">
                                 <rect key="frame" x="16" y="61" width="568" height="452"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="26 km left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLQ-va-cJh">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26 km left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLQ-va-cJh">
                                         <rect key="frame" x="8" y="22" width="552" height="161"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="112"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="161" id="7Ht-ig-mgC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="67"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="88:13" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6P-RY-W27">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88:13" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6P-RY-W27">
                                         <rect key="frame" x="8" y="242" width="552" height="157"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="112"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="157" id="AN7-n3-ax9"/>
+                                            <constraint firstAttribute="width" constant="552" id="YXY-Io-axb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="67"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1v-iG-DfS">
-                                        <rect key="frame" x="238" y="198" width="93" height="55"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1v-iG-DfS">
+                                        <rect key="frame" x="265" y="172" width="39" height="55"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="50"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -261,26 +268,42 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="CLQ-va-cJh" secondAttribute="trailing" constant="8" id="4BT-Ix-7Vz"/>
                                     <constraint firstAttribute="centerX" secondItem="CLQ-va-cJh" secondAttribute="centerX" id="5ia-wH-T6m"/>
-                                    <constraint firstAttribute="width" constant="296" id="Q1o-eV-sAk"/>
+                                    <constraint firstAttribute="width" constant="568" id="Q1o-eV-sAk"/>
                                     <constraint firstAttribute="centerX" secondItem="g6P-RY-W27" secondAttribute="centerX" id="UoE-IS-EPa"/>
-                                    <constraint firstAttribute="height" constant="232" id="Vwe-QO-Ibf"/>
+                                    <constraint firstAttribute="height" constant="452" id="Vwe-QO-Ibf"/>
                                     <constraint firstAttribute="centerX" secondItem="h1v-iG-DfS" secondAttribute="centerX" id="Wg8-2d-n3z"/>
+                                    <constraint firstItem="g6P-RY-W27" firstAttribute="top" secondItem="h1v-iG-DfS" secondAttribute="bottom" constant="15" id="YAr-Lk-r26"/>
                                     <constraint firstItem="CLQ-va-cJh" firstAttribute="leading" secondItem="Gfv-3r-UpN" secondAttribute="leading" constant="8" id="azo-rD-c8i"/>
                                     <constraint firstItem="h1v-iG-DfS" firstAttribute="top" secondItem="CLQ-va-cJh" secondAttribute="bottom" constant="8" symbolic="YES" id="dTJ-OF-9YO"/>
+                                    <constraint firstItem="g6P-RY-W27" firstAttribute="top" secondItem="CLQ-va-cJh" secondAttribute="bottom" constant="59" id="hNc-Hg-8k5"/>
+                                    <constraint firstItem="g6P-RY-W27" firstAttribute="top" secondItem="CLQ-va-cJh" secondAttribute="bottom" constant="59" id="kRU-F4-UWq"/>
+                                    <constraint firstItem="CLQ-va-cJh" firstAttribute="top" secondItem="Gfv-3r-UpN" secondAttribute="top" constant="22" id="kcU-MG-KNt"/>
                                     <constraint firstItem="h1v-iG-DfS" firstAttribute="top" secondItem="CLQ-va-cJh" secondAttribute="bottom" constant="15" id="tPG-Cx-nLb"/>
+                                    <constraint firstItem="g6P-RY-W27" firstAttribute="top" secondItem="CLQ-va-cJh" secondAttribute="bottom" constant="59" id="uKa-Ra-7ua"/>
+                                    <constraint firstItem="h1v-iG-DfS" firstAttribute="top" secondItem="CLQ-va-cJh" secondAttribute="bottom" constant="-11" id="wBg-lO-8UZ"/>
                                     <constraint firstItem="CLQ-va-cJh" firstAttribute="top" secondItem="Gfv-3r-UpN" secondAttribute="top" constant="22" id="xTR-wV-RiE"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="xTR-wV-RiE"/>
+                                        <exclude reference="hNc-Hg-8k5"/>
+                                        <exclude reference="uKa-Ra-7ua"/>
                                         <exclude reference="dTJ-OF-9YO"/>
+                                        <exclude reference="tPG-Cx-nLb"/>
                                     </mask>
                                 </variation>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oA4-Wy-aT5">
+                                <rect key="frame" x="432" y="521" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.92549019607843142" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="Gfv-3r-UpN" secondAttribute="centerY" id="8LY-D6-a4N"/>
+                            <constraint firstAttribute="centerY" secondItem="Gfv-3r-UpN" secondAttribute="centerY" constant="13" id="8LY-D6-a4N"/>
                             <constraint firstItem="ZEp-dK-zaW" firstAttribute="top" secondItem="YYq-ST-rDE" secondAttribute="bottom" constant="10" id="D6P-X5-O45"/>
                             <constraint firstAttribute="centerX" secondItem="YYq-ST-rDE" secondAttribute="centerX" id="Vif-Ye-RhO"/>
                             <constraint firstAttribute="centerX" secondItem="Gfv-3r-UpN" secondAttribute="centerX" id="cHO-WG-OgP"/>

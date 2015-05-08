@@ -12,6 +12,7 @@
 		902D0CDA1A9715000049DB9C /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 902D0CD91A9715000049DB9C /* Keys.plist */; };
 		902D0CDE1A9815FA0049DB9C /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902D0CDD1A9815FA0049DB9C /* FacebookSDK.framework */; };
 		902D0CE21A984C8A0049DB9C /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902D0CE11A984C8A0049DB9C /* ParseFacebookUtils.framework */; };
+		9068B3711AFC3BF80085221E /* RunScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9068B3701AFC3BF80085221E /* RunScreenViewController.m */; };
 		90B09C811A7733D7009602A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B09C801A7733D7009602A2 /* main.m */; };
 		90B09C871A7733D7009602A2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B09C861A7733D7009602A2 /* ViewController.m */; };
 		90B09C8A1A7733D7009602A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B09C881A7733D7009602A2 /* Main.storyboard */; };
@@ -55,6 +56,8 @@
 		902D0CD91A9715000049DB9C /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = SOURCE_ROOT; };
 		902D0CDD1A9815FA0049DB9C /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		902D0CE11A984C8A0049DB9C /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		9068B3701AFC3BF80085221E /* RunScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunScreenViewController.m; sourceTree = "<group>"; };
+		9068B3721AFC3C0D0085221E /* RunScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunScreenViewController.h; sourceTree = "<group>"; };
 		90B09C7B1A7733D7009602A2 /* Donner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B09C7F1A7733D7009602A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90B09C801A7733D7009602A2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 		90B09C7D1A7733D7009602A2 /* Donner */ = {
 			isa = PBXGroup;
 			children = (
+				9068B3721AFC3C0D0085221E /* RunScreenViewController.h */,
+				9068B3701AFC3BF80085221E /* RunScreenViewController.m */,
 				90175B151AF3184600AC513D /* UIButton+buttonPressed.h */,
 				90175B161AF3184600AC513D /* UIButton+buttonPressed.m */,
 				902D0CD71A89B27D0049DB9C /* AppDelegate.m */,
@@ -328,6 +333,7 @@
 				90B09C871A7733D7009602A2 /* ViewController.m in Sources */,
 				90B09C811A7733D7009602A2 /* main.m in Sources */,
 				90175B171AF3184600AC513D /* UIButton+buttonPressed.m in Sources */,
+				9068B3711AFC3BF80085221E /* RunScreenViewController.m in Sources */,
 				902D0CD81A89B27D0049DB9C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

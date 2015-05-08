@@ -74,12 +74,12 @@
     //update distanceLeft;
     timeLeft = [NSString stringWithFormat:@"%ld", minutesLeft];
     if(timeUp == true){
-        _workLeft.text = @"TIME'S UP";
+    //    _workLeft.text = @"TIME'S UP";
     } else{
-        _workLeft.text = distanceLeft;
+      /*  _workLeft.text = distanceLeft;
         _workLeft.text = [_workLeft.text stringByAppendingString:@"km left in "];
         _workLeft.text = [_workLeft.text stringByAppendingString:timeLeft];
-        _workLeft.text = [_workLeft.text stringByAppendingString:@" minutes!"];
+        _workLeft.text = [_workLeft.text stringByAppendingString:@" minutes!"];*/
     }
 }
 
@@ -127,10 +127,10 @@
     self.startTime = [NSDate date];
     timeLeft = _minutesGoal.text;
     minutesLeft = [timeLeft intValue];
-    _workLeft.text = distanceLeft;
+   /* _workLeft.text = distanceLeft;
     _workLeft.text = [_workLeft.text stringByAppendingString:@"km left in "];
     _workLeft.text = [_workLeft.text stringByAppendingString:timeLeft];
-    _workLeft.text = [_workLeft.text stringByAppendingString:@" minutes!"];
+    _workLeft.text = [_workLeft.text stringByAppendingString:@" minutes!"];*/
     [self initiateTimer];
     [self updateTimer];
 }
