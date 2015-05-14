@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface runScreenViewController : UIViewController
+@interface RunScreenViewController : UIViewController
 
-@property (nonatomic, weak) IBOutlet UILabel *distanceLeft;
-@property (nonatomic, weak) IBOutlet UILabel *timeLeft;
-@property (nonatomic, weak) IBOutlet UIButton *test1;
+//@property (nonatomic, weak) IBOutlet UILabel *distanceLeft;
+//@property (nonatomic, weak) IBOutlet UILabel *timeLeft;
+@property (nonatomic) NSString* runTimeLeft;
+@property (nonatomic) NSString* runDistanceLeft;
+@property (nonatomic, strong) IBOutlet UILabel *timeLeft;
+@property (nonatomic, strong) IBOutlet UILabel *distanceLeft;
 @end
