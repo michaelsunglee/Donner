@@ -12,14 +12,14 @@
 
 @interface ViewController : UIViewController
 
-@property (assign, nonatomic) IBOutlet UITextField *kmGoal;
-@property (assign, nonatomic) IBOutlet UITextField *minutesGoal;
-@property (assign, nonatomic) IBOutlet UIButton *startButton;
-@property (assign, nonatomic) IBOutlet UIButton *twitterButton;
-@property (assign, nonatomic) IBOutlet UIButton *facebookButton;
-@property (assign, nonatomic) IBOutlet UIButton *linkedInButton;
-@property (assign, nonatomic) IBOutlet UISegmentedControl *unit;
+@property (nonatomic, strong) IBOutlet UITextField *kmGoal;
+@property (nonatomic, strong) IBOutlet UITextField *minutesGoal;
+@property (nonatomic, strong) IBOutlet UIButton *startButton;
+@property (nonatomic, strong) IBOutlet UIButton *twitterButton;
+@property (nonatomic, strong) IBOutlet UIButton *facebookButton;
+@property (nonatomic, strong) IBOutlet UIButton *linkedInButton;
+@property (nonatomic, strong) IBOutlet UISegmentedControl *unit;
 
-@property (assign, nonatomic) NSTimer *timer;
+@property (nonatomic, strong) NSTimer *timer;
 
 @end
