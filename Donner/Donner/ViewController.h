@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "RunScreenViewController.h"
 
 @interface ViewController : UIViewController
 
@@ -17,8 +18,8 @@
 @property (assign, nonatomic) IBOutlet UIButton *twitterButton;
 @property (assign, nonatomic) IBOutlet UIButton *facebookButton;
 @property (assign, nonatomic) IBOutlet UIButton *linkedInButton;
+@property (assign, nonatomic) IBOutlet UISegmentedControl *unit;
 
 @property (assign, nonatomic) NSTimer *timer;
 
 @end
-

@@ -7,7 +7,7 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>263CCCD9-88B3-497B-A282-9F84571CE746</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Donner</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>131CBF0EFF1993D836E2A0135FB7AE944F5C2989</key>
@@ -16,7 +16,7 @@
 		<string>https://github.com/michaelsunglee/ClockChess.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Donner/Donner.xcodeproj</string>
+	<string>Donner/Donner.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>131CBF0EFF1993D836E2A0135FB7AE944F5C2989</key>

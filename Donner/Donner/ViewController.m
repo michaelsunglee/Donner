@@ -74,16 +74,19 @@
 -(IBAction)startPressed:(id)sender
 {
     NSLog(@"START BUTTON PRESSED");
+    RunScreenViewController *runViewController = [[RunScreenViewController alloc] init];
+    NSLog(@"RunScreenViewController delegated");
     timerStart = true;
-    distanceLeft = _kmGoal.text;
+    //distanceLeft = _kmGoal.text;
     self.startTime = [NSDate date];
-    timeLeft = _minutesGoal.text;
+   // timeLeft = _minutesGoal.text;
    // minutesLeft = [timeLeft intValue];
     //The VC when user presses "Start" button (what they see while running)
-    RunScreenViewController *runScreenViewController = [[RunScreenViewController alloc] init];
-    runScreenViewController.runTimeLeft = timeLeft;
-    runScreenViewController.runDistanceLeft = distanceLeft;
+    runViewController.runTimeLeft = timeLeft;
+    runViewController.runDistanceLeft = distanceLeft;
     
+    [self.navigationController pushViewController:runViewController animated:YES];
+    NSLog(@"end of startPressed");
    /* _workLeft.text = distanceLeft;
     _workLeft.text = [_workLeft.text stringByAppendingString:@"km left in "];
     _workLeft.text = [_workLeft.text stringByAppendingString:timeLeft];
@@ -106,6 +109,32 @@
 
 -(IBAction)unwindSegue:(UIStoryboardSegue *)segue{
     
+}
+
+//passing values to runScreenViewController once start button is pressed
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"sendToRunViewController"]){
+        timeLeft = _minutesGoal.text;
+        distanceLeft = _kmGoal.text;
+        RunScreenViewController *runViewController = [[RunScreenViewController alloc]init];
+        runViewController = (RunScreenViewController *)segue.destinationViewController;
+        NSLog(@"makes it here");
+//        runViewController.timeLeft.text = timeLeft;
+//        runViewController.distanceLeft.text = distanceLeft;
+        runViewController.runTimeLeft = timeLeft;
+        runViewController.runDistanceLeft = distanceLeft;
+        if(_unit.selectedSegmentIndex == 0){
+            runViewController.distanceUnit = @" Km";
+        }else if(_unit.selectedSegmentIndex == 1){
+            runViewController.distanceUnit = @" Mi";
+        }
+        NSLog(@"Time left is: %@ and distance left is: %@", timeLeft, distanceLeft);
+        NSLog(@"prepared for segue!");
+    }
+}
+
+-(void)RunScreenViewController:(RunScreenViewController *)viewController{
+    NSLog(@"YEA!!");
 }
 
 @end

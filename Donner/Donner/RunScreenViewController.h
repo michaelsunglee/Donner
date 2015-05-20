@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface RunScreenViewController : UIViewController
 
-//@property (nonatomic, weak) IBOutlet UILabel *distanceLeft;
-//@property (nonatomic, weak) IBOutlet UILabel *timeLeft;
 @property (nonatomic) NSString* runTimeLeft;
 @property (nonatomic) NSString* runDistanceLeft;
-@property (nonatomic, strong) IBOutlet UILabel *timeLeft;
-@property (nonatomic, strong) IBOutlet UILabel *distanceLeft;
+@property (nonatomic, strong) NSString* distanceUnit;
+@property (nonatomic, retain) IBOutlet UILabel *timeLeft;
+@property (nonatomic, retain) IBOutlet UILabel *distanceLeft;
+@property (nonatomic) NSInteger minutesLeft;
 @end

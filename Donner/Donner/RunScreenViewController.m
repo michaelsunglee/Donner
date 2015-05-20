@@ -13,7 +13,6 @@
 @interface RunScreenViewController()
 {
     int tally;
-    NSInteger minutesLeft;
     BOOL timeUp;
     BOOL pressedOnce;
     BOOL timerStart;
@@ -23,22 +22,36 @@
 
 @implementation RunScreenViewController
 -(void)viewDidLoad{
-    NSLog(@"newViewController loads");
-  //  ViewController *viewController = [[ViewController alloc] init];
-//    _runTimeLeft = ViewController.timeLeft.text;
-    NSLog(@"timeLeft is: %@", _runTimeLeft);
-    NSLog(@"distanceLeft is: %@", _runDistanceLeft);
-    [self updateRunLabel];
+    NSLog(@"runViewController loads");
+   // _timeLeft.text = _runTimeLeft;
+   // _distanceLeft.text = _runDistanceLeft;
+    _timeLeft.text = _runTimeLeft;
+    _distanceLeft.text = _runDistanceLeft;
+    NSLog(@"first: %@", _timeLeft.text);
+    
+    _timeLeft.text = [_timeLeft.text stringByAppendingString:@" Min"];
+    NSLog(@"second: %@", _timeLeft.text);
+    //may want to re-format below line. 13:12 style
+    _distanceLeft.text = [_distanceLeft.text stringByAppendingString:_distanceUnit];
+
+    
+    //[self initiateTimer];
+    //[self updateRunLabel];
 }
 
 -(void)viewDidAppear{
-    NSLog(@"runViewController appears");
+    NSLog(@"viewDidAppear");
+    [self updateRunLabel];
 }
 
+-(void)viewWillAppear{
+    NSLog(@"ViewWillAppear");
+}
 
 -(void)updateRunLabel{
     NSLog(@"updateRunLabel called");
     _timeLeft.text = _runTimeLeft;
+    _distanceLeft.text = _runDistanceLeft;
 }
 
 -(void) updateTimer{
@@ -65,8 +78,8 @@
     ++tally;
     if(tally == 12){
         tally = 0;
-        minutesLeft = minutesLeft - 1;
-        if(minutesLeft == 0){
+        _minutesLeft = _minutesLeft - 1;
+        if(_minutesLeft == 0){
             timeUp = true;
         }
         [self updateLabel];
@@ -74,15 +87,16 @@
 }
 
 -(void) initiateTimer{
-    if(timerStart == true && pressedOnce == false){
-        _timeLeft.text = [NSString stringWithFormat:@"%ld", (long)minutesLeft];
-        pressedOnce = true;
-    }
+    //if(timerStart == true && pressedOnce == false){
+        NSLog(@"minutesLeft is: %zd", _minutesLeft);
+        _timeLeft.text = [NSString stringWithFormat:@"%ld", (long)_minutesLeft];
+        //pressedOnce = true;
+    //}
 }
 
 -(void) updateLabel{
     //update distanceLeft;
-    _timeLeft.text = [NSString stringWithFormat:@"%ld", (long)minutesLeft];
+   // _timeLeft.text = [NSString stringWithFormat:@"%ld", (long)minutesLeft];
     if(timeUp == true){
         //    _workLeft.text = @"TIME'S UP";
     }else{
@@ -92,6 +106,5 @@
          _workLeft.text = [_workLeft.text stringByAppendingString:@" minutes!"];*/
     }
 }
-
 
 @end
