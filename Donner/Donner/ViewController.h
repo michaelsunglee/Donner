@@ -19,7 +19,9 @@
 @property (nonatomic, strong) IBOutlet UIButton *facebookButton;
 @property (nonatomic, strong) IBOutlet UIButton *linkedInButton;
 @property (nonatomic, strong) IBOutlet UISegmentedControl *unit;
-
+@property (nonatomic, strong) NSDate *startTime;
+@property (nonatomic, readonly, retain) UIImage *currentBackgroundImage;
 @property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) NSUserDefaults *userDefaults;
 
 @end

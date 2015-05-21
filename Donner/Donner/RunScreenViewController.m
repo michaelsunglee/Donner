@@ -23,8 +23,6 @@
 @implementation RunScreenViewController
 -(void)viewDidLoad{
     NSLog(@"runViewController loads");
-   // _timeLeft.text = _runTimeLeft;
-   // _distanceLeft.text = _runDistanceLeft;
     _timeLeft.text = _runTimeLeft;
     _distanceLeft.text = _runDistanceLeft;
     NSLog(@"first: %@", _timeLeft.text);

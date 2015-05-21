@@ -24,13 +24,10 @@
     BOOL pressedOnce;
 //    BOOL timeUp;
 }
-
-@property (nonatomic, strong) NSDate *startTime;
-@property (nonatomic, readonly, retain) UIImage *currentBackgroundImage;
 @end
 
 @implementation ViewController
-
+@synthesize userDefaults;
 - (void)viewDidLoad {
     [super viewDidLoad];
     PFUser *user = [PFUser user];
@@ -52,6 +49,14 @@
         }
     }];
      */
+    userDefaults = [NSUserDefaults standardUserDefaults];
+    if([[userDefaults objectForKey:@"Unit"] isEqualToString:@"Mi"]){
+        _unit.selectedSegmentIndex = 0;
+    }else{//includes default starting position
+        NSLog(@"starting posn");
+        _unit.selectedSegmentIndex = 1;
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -124,12 +129,13 @@
         runViewController.runTimeLeft = timeLeft;
         runViewController.runDistanceLeft = distanceLeft;
         if(_unit.selectedSegmentIndex == 0){
-            runViewController.distanceUnit = @" Km";
-        }else if(_unit.selectedSegmentIndex == 1){
+            [userDefaults setObject:@"Mi" forKey:@"Unit"];
             runViewController.distanceUnit = @" Mi";
+        }else if(_unit.selectedSegmentIndex == 1){
+            [userDefaults setObject:@"Km" forKey:@"Unit"];
+            runViewController.distanceUnit = @" Km";
         }
         NSLog(@"Time left is: %@ and distance left is: %@", timeLeft, distanceLeft);
-        NSLog(@"prepared for segue!");
     }
 }
 
