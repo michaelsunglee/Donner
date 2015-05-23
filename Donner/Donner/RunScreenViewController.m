@@ -27,36 +27,43 @@
     _distanceLeft.text = _runDistanceLeft;
 
     NSLog(@"second: %@", _timeLeft.text);
-    //may want to re-format below line. 13:12 style
-    [self addUnits];
     
     //convert nsstring to nsinteger to use timer
     _minutesLeft = [_runTimeLeft integerValue];
-    
-    //[self initiateTimer];
+    [self addDistanceUnit];
+    [self initiateTimer];
     [self updateTimer];
     [self updateRunLabel];
 }
 
 -(void) initiateTimer{
-    //if(timerStart == true && pressedOnce == false){
-    NSLog(@"minutesLeft is: %zd", _minutesLeft);
+    _totalSeconds = _minutesLeft * 60;
+    _secondsLeft = _totalSeconds % 60;//should always start at 0
+    [self updateTimeLeft];
+}
+
+-(void)updateTimeLeft{//called every second
+    //turning minutes chosen into mm:ss format
     _timeLeft.text = [NSString stringWithFormat:@"%ld", (long)_minutesLeft];
-    //pressedOnce = true;
-    //}
+    _timeLeft.text = [_timeLeft.text stringByAppendingString:@":"];
+    if(_secondsLeft <10 && _secondsLeft >= 0){//mm:ss intead of mm:s when s is one digit
+        _timeLeft.text = [_timeLeft.text stringByAppendingString:@"0"];
+    }
+    _timeLeft.text = [_timeLeft.text stringByAppendingString: [NSString stringWithFormat:@"%ld", (long)_secondsLeft]];
 }
 
 -(void)updateRunLabel{
-    NSLog(@"updateRunLabel called");
-    _timeLeft.text = [NSString stringWithFormat:@"%ld", (long)_minutesLeft];
-    _distanceLeft.text = _runDistanceLeft;
-    [self addUnits];
+   /* _timeLeft.text = [NSString stringWithFormat:@"%ld", (long)_minutesLeft];
+    _timeLeft.text = [_timeLeft.text stringByAppendingString:@":"];
+    _timeLeft.text = [_timeLeft.text stringByAppendingString: [NSString stringWithFormat:@"%ld", (long)_secondsLeft]];
+    _distanceLeft.text = _runDistanceLeft;*/
+//    [self updateTimeLeft];
 }
 
 -(void) updateTimer{
-    [NSTimer scheduledTimerWithTimeInterval:5.0f
+    [NSTimer scheduledTimerWithTimeInterval:1.0f
                                      target: self
-                                   selector:@selector(testTimer)
+                                   selector:@selector(timerFire)
                                    userInfo:nil
                                     repeats:YES];
     
@@ -71,36 +78,15 @@
     //minutesLeft= minutesLeft-1;
 }
 
--(void)testTimer{
-    NSLog(@"HERE");
-    ++tally;
-    if(tally == 12){
-        tally = 0;
-        _minutesLeft = _minutesLeft - 1;
-        if(_minutesLeft == 0){
-            timeUp = true;
-        }
-        [self updateRunLabel];
-    }
+-(void)timerFire{//called every second
+    --_totalSeconds;
+    _minutesLeft = _totalSeconds / 60;
+    _secondsLeft = _totalSeconds % 60;
+    [self updateTimeLeft];
 }
 
--(void) updateLabel{
-    //update distanceLeft;
-   // _timeLeft.text = [NSString stringWithFormat:@"%ld", (long)minutesLeft];
-    if(timeUp == true){
-        //    _workLeft.text = @"TIME'S UP";
-    }else{
-        /*  _workLeft.text = distanceLeft;
-         _workLeft.text = [_workLeft.text stringByAppendingString:@"km left in "];
-         _workLeft.text = [_workLeft.text stringByAppendingString:timeLeft];
-         _workLeft.text = [_workLeft.text stringByAppendingString:@" minutes!"];*/
-    }
-}
-
--(void)addUnits{
-    _timeLeft.text = [_timeLeft.text stringByAppendingString:@ " Min"];
+-(void)addDistanceUnit{
     _distanceLeft.text = [_distanceLeft.text stringByAppendingString:_distanceUnit];
 }
-
 
 @end

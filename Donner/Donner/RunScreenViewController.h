@@ -17,4 +17,6 @@
 @property (nonatomic, strong) IBOutlet UILabel *timeLeft;
 @property (nonatomic, strong) IBOutlet UILabel *distanceLeft;
 @property (nonatomic) NSInteger minutesLeft;
+@property (nonatomic) NSInteger secondsLeft;
+@property (nonatomic) NSInteger totalSeconds;
 @end
