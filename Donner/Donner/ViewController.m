@@ -37,8 +37,7 @@
     
     // other fields can be set if you want to save more information
     user[@"phone"] = @"650-555-0000";
-    
- 
+
     /*
      [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
@@ -56,7 +55,6 @@
         NSLog(@"starting posn");
         _unit.selectedSegmentIndex = 1;
     }
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,7 +67,6 @@
     [_kmGoal endEditing:YES];
     [_minutesGoal endEditing:YES];
 }
-
 
 -(IBAction)wantTwitterShame:(id)sender
 {

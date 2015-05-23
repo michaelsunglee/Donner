@@ -25,31 +25,32 @@
     NSLog(@"runViewController loads");
     _timeLeft.text = _runTimeLeft;
     _distanceLeft.text = _runDistanceLeft;
-    NSLog(@"first: %@", _timeLeft.text);
-    
-    _timeLeft.text = [_timeLeft.text stringByAppendingString:@" Min"];
+
     NSLog(@"second: %@", _timeLeft.text);
     //may want to re-format below line. 13:12 style
-    _distanceLeft.text = [_distanceLeft.text stringByAppendingString:_distanceUnit];
-
+    [self addUnits];
+    
+    //convert nsstring to nsinteger to use timer
+    _minutesLeft = [_runTimeLeft integerValue];
     
     //[self initiateTimer];
-    //[self updateRunLabel];
-}
-
--(void)viewDidAppear{
-    NSLog(@"viewDidAppear");
+    [self updateTimer];
     [self updateRunLabel];
 }
 
--(void)viewWillAppear{
-    NSLog(@"ViewWillAppear");
+-(void) initiateTimer{
+    //if(timerStart == true && pressedOnce == false){
+    NSLog(@"minutesLeft is: %zd", _minutesLeft);
+    _timeLeft.text = [NSString stringWithFormat:@"%ld", (long)_minutesLeft];
+    //pressedOnce = true;
+    //}
 }
 
 -(void)updateRunLabel{
     NSLog(@"updateRunLabel called");
-    _timeLeft.text = _runTimeLeft;
+    _timeLeft.text = [NSString stringWithFormat:@"%ld", (long)_minutesLeft];
     _distanceLeft.text = _runDistanceLeft;
+    [self addUnits];
 }
 
 -(void) updateTimer{
@@ -70,7 +71,6 @@
     //minutesLeft= minutesLeft-1;
 }
 
-
 -(void)testTimer{
     NSLog(@"HERE");
     ++tally;
@@ -80,16 +80,8 @@
         if(_minutesLeft == 0){
             timeUp = true;
         }
-        [self updateLabel];
+        [self updateRunLabel];
     }
-}
-
--(void) initiateTimer{
-    //if(timerStart == true && pressedOnce == false){
-        NSLog(@"minutesLeft is: %zd", _minutesLeft);
-        _timeLeft.text = [NSString stringWithFormat:@"%ld", (long)_minutesLeft];
-        //pressedOnce = true;
-    //}
 }
 
 -(void) updateLabel{
@@ -104,5 +96,11 @@
          _workLeft.text = [_workLeft.text stringByAppendingString:@" minutes!"];*/
     }
 }
+
+-(void)addUnits{
+    _timeLeft.text = [_timeLeft.text stringByAppendingString:@ " Min"];
+    _distanceLeft.text = [_distanceLeft.text stringByAppendingString:_distanceUnit];
+}
+
 
 @end
