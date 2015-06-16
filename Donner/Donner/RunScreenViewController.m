@@ -45,26 +45,29 @@
     //this view is always tracking location/distance travelled so set as delegate
     self.locationManager.delegate = self;
     self.location = [[CLLocation alloc] init];
-    self.locationManager.distanceFilter = 6.0f;
+    self.locationManager.distanceFilter = 5; //in meters
+    
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {//need this bc will crash in ios7- otherwise
+        [self.locationManager requestWhenInUseAuthorization];
+    }
     [self.locationManager startUpdatingLocation];
     travelled = false;
+}
+
+-(void)userFail{
+    
+}
+
+-(void)userVictorious{
+    
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
 //    getting lastObject from locations NSArray and storing in CLLocation property (self.location)
     self.location = locations.lastObject;
     NSLog(@"%@", self.location.description);
-    if(travelled)
-    {
-        NSLog(@"is button black?");
-        self.quitButton.backgroundColor = [UIColor blackColor];
-    }else{
-        NSLog(@"is button orange?");
-        self.quitButton.backgroundColor  = [UIColor orangeColor];
-    }
-}
 
-//-(void)locationManager
+}
 
 -(void) initiateTimer{
     _totalSeconds = _minutesLeft * 60;
@@ -83,6 +86,8 @@
 }
 
 -(void)updateRunLabel{
+    
+    
    /* _timeLeft.text = [NSString stringWithFormat:@"%ld", (long)_minutesLeft];
     _timeLeft.text = [_timeLeft.text stringByAppendingString:@":"];
     _timeLeft.text = [_timeLeft.text stringByAppendingString: [NSString stringWithFormat:@"%ld", (long)_secondsLeft]];
@@ -112,6 +117,7 @@
     if(_totalSeconds < 0){//time runs out
         _timeLeft.text = @"TIME UP";
         //trigger punishment here
+        [self userFail];
         return;
     }
     --_totalSeconds;

@@ -66,5 +66,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>To determine how far you ran while allowing you to open other apps.</string>
 </dict>
 </plist>
