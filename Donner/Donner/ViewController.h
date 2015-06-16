@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import "RunScreenViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UITextFieldDelegate>
 
 @property (nonatomic, strong) IBOutlet UITextField *kmGoal;
 @property (nonatomic, strong) IBOutlet UITextField *minutesGoal;

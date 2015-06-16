@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -19,7 +19,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaE-uM-0yy">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="78"/>
-                                <color key="backgroundColor" red="0.20266062062936993" green="0.703125" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.20392156862745098" green="0.70196078431372544" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="77.5" id="wgI-0P-l7O"/>
                                 </constraints>
@@ -29,7 +29,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7n-Il-bjp">
                                 <rect key="frame" x="224" y="545" width="152" height="45"/>
-                                <color key="backgroundColor" red="0.20392156862745098" green="0.70196078431372544" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="152" id="B6r-0o-p1v"/>
                                 </constraints>
@@ -307,6 +307,7 @@
                     <navigationItem key="navigationItem" id="R5T-nB-ER3"/>
                     <connections>
                         <outlet property="distanceLeft" destination="CLQ-va-cJh" id="Iv9-LP-E2m"/>
+                        <outlet property="quitButton" destination="YYq-ST-rDE" id="ELb-QV-DUr"/>
                         <outlet property="timeLeft" destination="g6P-RY-W27" id="c6Y-7g-xIp"/>
                     </connections>
                 </viewController>

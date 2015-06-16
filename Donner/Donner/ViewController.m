@@ -37,7 +37,16 @@
     
     // other fields can be set if you want to save more information
     user[@"phone"] = @"650-555-0000";
-
+    
+    
+    self.kmGoal.delegate = self;
+    self.minutesGoal.delegate = self;
+    UITapGestureRecognizer *userTap = [[UITapGestureRecognizer alloc]
+                                       initWithTarget:self
+                                       action:@selector(singleTap:)];
+    [self.view addGestureRecognizer:userTap];
+    
+    _startButton.enabled = NO;
     /*
      [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
@@ -62,8 +71,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+
+-(void)singleTap:(UITapGestureRecognizer *)recognizer
 {
+    NSLog(@"user tapped");
     [_kmGoal endEditing:YES];
     [_minutesGoal endEditing:YES];
 }
@@ -111,6 +122,17 @@
 
 -(IBAction)unwindSegue:(UIStoryboardSegue *)segue{
     
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    NSLog(@"user ends editing uitextfield");
+    if(![_kmGoal.text isEqualToString:@""] && ![_minutesGoal.text isEqualToString:@""]){
+        _startButton.backgroundColor = [UIColor colorWithRed:0.204 green:0.702 blue:0 alpha:1];
+        _startButton.enabled = YES;
+    }else{
+        _startButton.backgroundColor = [UIColor colorWithRed:0.635 green:0.635 blue:0.635 alpha:1];
+        _startButton.enabled = NO;
+    }
 }
 
 //passing values to runScreenViewController once start button is pressed

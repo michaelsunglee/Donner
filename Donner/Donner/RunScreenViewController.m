@@ -10,12 +10,14 @@
 #import "ViewController.h"
 #import "RunScreenViewController.h"
 
+
 @interface RunScreenViewController()
 {
     int tally;
     BOOL timeUp;
     BOOL pressedOnce;
     BOOL timerStart;
+    BOOL travelled;
 }
 
 @end
@@ -34,7 +36,35 @@
     [self initiateTimer];
     [self updateTimer];
     [self updateRunLabel];
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;//test and see if this is best accuracy setting
+    if([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]){
+        [self.locationManager requestAlwaysAuthorization];
+    }
+    [self.locationManager startUpdatingLocation];
+    //this view is always tracking location/distance travelled so set as delegate
+    self.locationManager.delegate = self;
+    self.location = [[CLLocation alloc] init];
+    self.locationManager.distanceFilter = 6.0f;
+    [self.locationManager startUpdatingLocation];
+    travelled = false;
 }
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+//    getting lastObject from locations NSArray and storing in CLLocation property (self.location)
+    self.location = locations.lastObject;
+    NSLog(@"%@", self.location.description);
+    if(travelled)
+    {
+        NSLog(@"is button black?");
+        self.quitButton.backgroundColor = [UIColor blackColor];
+    }else{
+        NSLog(@"is button orange?");
+        self.quitButton.backgroundColor  = [UIColor orangeColor];
+    }
+}
+
+//-(void)locationManager
 
 -(void) initiateTimer{
     _totalSeconds = _minutesLeft * 60;
@@ -79,6 +109,11 @@
 }
 
 -(void)timerFire{//called every second
+    if(_totalSeconds < 0){//time runs out
+        _timeLeft.text = @"TIME UP";
+        //trigger punishment here
+        return;
+    }
     --_totalSeconds;
     _minutesLeft = _totalSeconds / 60;
     _secondsLeft = _totalSeconds % 60;
@@ -87,6 +122,12 @@
 
 -(void)addDistanceUnit{
     _distanceLeft.text = [_distanceLeft.text stringByAppendingString:_distanceUnit];
+}
+
+//if user denies access to use location
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"%@", error.description);
 }
 
 @end
