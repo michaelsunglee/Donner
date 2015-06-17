@@ -14,6 +14,7 @@
 @interface RunScreenViewController()
 {
     int tally;
+    float distanceToTravel;
     BOOL timeUp;
     BOOL pressedOnce;
     BOOL timerStart;
@@ -27,6 +28,7 @@
     NSLog(@"runViewController loads");
     _timeLeft.text = _runTimeLeft;
     _distanceLeft.text = _runDistanceLeft;
+    distanceToTravel = [_runDistanceLeft floatValue];
 
     NSLog(@"second: %@", _timeLeft.text);
     
@@ -45,7 +47,7 @@
     //this view is always tracking location/distance travelled so set as delegate
     self.locationManager.delegate = self;
     self.location = [[CLLocation alloc] init];
-    self.locationManager.distanceFilter = 5; //in meters
+    self.locationManager.distanceFilter = 10; //in meters
     
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {//need this bc will crash in ios7- otherwise
         [self.locationManager requestWhenInUseAuthorization];
@@ -66,7 +68,13 @@
 //    getting lastObject from locations NSArray and storing in CLLocation property (self.location)
     self.location = locations.lastObject;
     NSLog(@"%@", self.location.description);
-
+    distanceToTravel -= 0.01;
+    _distanceLeft.text = [NSString stringWithFormat:@"%.2f", distanceToTravel];
+    if(distanceToTravel <= 0){//less than put just in case
+        [self.locationManager stopUpdatingLocation];//user successfully covers distance before time runs out
+        [self userVictorious];
+        return;
+    }
 }
 
 -(void) initiateTimer{

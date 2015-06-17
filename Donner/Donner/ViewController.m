@@ -139,7 +139,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"sendToRunViewController"]){
         timeLeft = _minutesGoal.text;
-        distanceLeft = _kmGoal.text;
+        distanceLeft = [_kmGoal.text stringByAppendingString:@".00"];
         RunScreenViewController *runViewController = [[RunScreenViewController alloc]init];
         runViewController = (RunScreenViewController *)segue.destinationViewController;
         NSLog(@"makes it here");
