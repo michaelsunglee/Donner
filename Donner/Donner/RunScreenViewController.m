@@ -39,7 +39,7 @@
     [self updateTimer];
     [self updateRunLabel];
     self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;//test and see if this is best accuracy setting
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;//test and see if this is best accuracy setting
     if([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]){
         [self.locationManager requestAlwaysAuthorization];
     }
@@ -69,6 +69,9 @@
     self.location = locations.lastObject;
     NSLog(@"%@", self.location.description);
     distanceToTravel -= 0.01;
+    if(distanceToTravel >= [_runDistanceLeft floatValue]-0.5){//to counteract when user first starts and method runs x number of times. x seems to be random
+        return;
+    }
     _distanceLeft.text = [NSString stringWithFormat:@"%.2f", distanceToTravel];
     if(distanceToTravel <= 0){//less than put just in case
         [self.locationManager stopUpdatingLocation];//user successfully covers distance before time runs out
@@ -122,7 +125,7 @@
 }
 
 -(void)timerFire{//called every second
-    if(_totalSeconds < 0){//time runs out
+    if(_totalSeconds <= 0){//time runs out
         _timeLeft.text = @"TIME UP";
         //trigger punishment here
         [self userFail];
