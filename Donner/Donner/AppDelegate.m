@@ -18,72 +18,73 @@
 @end
 
 @implementation AppDelegate
-
+@synthesize dictionary;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSLog(@"didFinishLaunchingWithOptions");
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [Fabric with:@[TwitterKit]];
-    
-    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Keys" ofType:@"plist"]];
-    NSString *applicationId = [dictionary objectForKey:@"parseApplicationId"];
-    NSString *clientKey = [dictionary objectForKey:@"parseClientKey"];
-    NSString *consumerKey = [dictionary objectForKey:@"twitterConsumerKey"];
-    NSString *secretKey = [dictionary objectForKey:@"twitterSecretKey"];
-    //NSString *fbAppKey = [dictionary objectForKey:@"FacebookAppID"];
-    //
-    [Parse setApplicationId:applicationId
-                  clientKey:clientKey];
-    [PFTwitterUtils initializeWithConsumerKey:consumerKey
-                               consumerSecret:secretKey];
-    
-    
-    //Trigger method for Twitter Auth
-    /*
-    [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
-        if (!user) {
-            NSLog(@"Uh oh. The user cancelled the Twitter login.");
-            return;
-        } else if (user.isNew) {
-            NSLog(@"User signed up and logged in with Twitter!");
-        } else {
-            NSLog(@"User logged in with Twitter!");
-        }
-    }];
-     */
-    
-    //Starting Facebook Auth
-    /*
-    [Parse setApplicationId:applicationId clientKey:clientKey];
-    [PFFacebookUtils initializeFacebook];
-     
-    
-    //Trigger method for Facebook Auth
-    NSArray *permissionsArray = @[@"user_about_me"];
-    
-    [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
-        if (!user) {
-            NSLog(@"Uh oh. The user cancelled the Facebook login.");
-        } else if (user.isNew) {
-            NSLog(@"User signed up and logged in through Facebook!");
-        } else {
-            NSLog(@"User logged in through Facebook!");
-        }
-    }];
-     */
-    /*
-    [PFFacebookUtils reauthorizeUser:[PFUser currentUser]
-              withPublishPermissions:@[@"publish_actions"]
-                            audience:FBSessionDefaultAudienceFriends
-                               block:^(BOOL succeeded, NSError *error) {
-                                   if (succeeded) {
-                                       // Your app now has publishing permissions for the user
-                                   }
-                               }];
-     */
 
     
+    dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Keys" ofType:@"plist"]];
+    
     return YES;
+}
+
+-(void)twitterAuth{
+    //Trigger method for Twitter Auth
+    NSLog(@"twitterAuth method called");
+    NSString *FabricConsumerKey = [dictionary objectForKey:@"twitterConsumerKey"];
+    NSString *FabricSecretKey = [dictionary objectForKey:@"twitterSecretKey"];
+    [PFTwitterUtils initializeWithConsumerKey:FabricConsumerKey
+                               consumerSecret:FabricSecretKey];
+    
+    [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
+    if (!user) {
+        NSLog(@"Uh oh. The user cancelled the Twitter login.");
+        return;
+    } else if (user.isNew) {
+        NSLog(@"User signed up and logged in with Twitter!");
+    } else {
+        NSLog(@"User logged in with Twitter!");
+    }
+    }];
+     
+}
+
+-(void)facebookAuth{
+    NSLog(@"facebookAuth method called");
+    NSString *ParseApplicationId = [dictionary objectForKey:@"parseApplicationId"];
+    NSString *ParseClientKey = [dictionary objectForKey:@"parseClientKey"];
+    //Starting Facebook Auth
+
+    [Parse setApplicationId:ParseApplicationId
+                  clientKey:ParseClientKey];
+     [PFFacebookUtils initializeFacebook];
+     
+     
+     //Trigger method for Facebook Auth
+     NSArray *permissionsArray = @[@"user_about_me"];
+     
+     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+     if (!user) {
+         NSLog(@"Uh oh. The user cancelled the Facebook login.");
+     } else if (user.isNew) {
+         NSLog(@"User signed up and logged in through Facebook!");
+     } else {
+         NSLog(@"User logged in through Facebook!");
+     }
+     }];
+    
+    [PFFacebookUtils reauthorizeUser:[PFUser currentUser]
+     withPublishPermissions:@[@"publish_actions"]
+     audience:FBSessionDefaultAudienceFriends
+     block:^(BOOL succeeded, NSError *error) {
+     if (succeeded) {
+     // Your app now has publishing permissions for the user
+     }
+     }];
 }
 
 - (BOOL)application:(UIApplication *)application

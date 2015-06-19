@@ -6,12 +6,16 @@
 //  Copyright (c) 2015 leeemichael. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "ViewController.h"
 #import "RunScreenViewController.h"
 #import "UIButton+buttonPressed.h"
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
+
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+//#define AppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
 @interface ViewController ()
 {
@@ -30,13 +34,13 @@
 @synthesize userDefaults;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    PFUser *user = [PFUser user];
-    user.username = @"my name";
-    user.password = @"my pass";
-    user.email = @"email@example.com";
-    
-    // other fields can be set if you want to save more information
-    user[@"phone"] = @"650-555-0000";
+//    PFUser *user = [PFUser user];
+//    user.username = @"my name";
+//    user.password = @"my pass";
+//    user.email = @"email@example.com";
+//    
+//    // other fields can be set if you want to save more information
+//    user[@"phone"] = @"650-555-0000";
     
     
     self.kmGoal.delegate = self;
@@ -110,14 +114,13 @@
 
 -(IBAction)didPressTwitterButton:(id)sender{
     [_twitterButton didPressButton:_twitterButton];
+    [[[UIApplication sharedApplication] delegate] performSelector:@selector(twitterAuth)];
 }
 
 -(IBAction)didPressFacebookButton:(id)sender{
     [_facebookButton didPressButton:_facebookButton];
-}
-
--(IBAction)didPressLinkedInButton:(id)sender{
-    [_linkedInButton didPressButton:_linkedInButton];
+    [[[UIApplication sharedApplication] delegate] performSelector:@selector(facebookAuth)];
+    //    [[[UIApplication sharedApplication] delegate] facebookAuth];
 }
 
 -(IBAction)unwindSegue:(UIStoryboardSegue *)segue{

@@ -150,18 +150,6 @@
                                     <constraint firstAttribute="width" constant="293.5" id="zfh-w2-ETu"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rnz-OS-0b0">
-                                <rect key="frame" x="220" y="406" width="160" height="40"/>
-                                <color key="backgroundColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="LinkedIn Shame">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressLinkedInButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="peK-vv-iaa"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.92549019607843142" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -170,22 +158,17 @@
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="C7n-Il-bjp" secondAttribute="bottom" constant="10" id="A8g-l3-JTH"/>
                             <constraint firstItem="fOu-Z4-ve7" firstAttribute="top" secondItem="Z0y-q8-r3T" secondAttribute="bottom" constant="27" id="ChC-wC-ulq"/>
                             <constraint firstItem="09s-wm-sFL" firstAttribute="top" secondItem="CaE-uM-0yy" secondAttribute="bottom" constant="3" id="E7B-qW-tNT"/>
-                            <constraint firstItem="fOu-Z4-ve7" firstAttribute="height" secondItem="Rnz-OS-0b0" secondAttribute="height" id="Gar-MV-yGM"/>
-                            <constraint firstItem="Rnz-OS-0b0" firstAttribute="centerX" secondItem="fOu-Z4-ve7" secondAttribute="centerX" id="Kgw-pQ-hW0"/>
                             <constraint firstItem="fOu-Z4-ve7" firstAttribute="height" secondItem="Z0y-q8-r3T" secondAttribute="height" id="M1i-oT-gcZ"/>
                             <constraint firstItem="CaE-uM-0yy" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="R9b-x5-kgp"/>
                             <constraint firstAttribute="centerX" secondItem="09s-wm-sFL" secondAttribute="centerX" constant="-0.75" id="XCt-Ew-NEL"/>
                             <constraint firstItem="TR9-ps-Xyx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="Xpu-XT-7Ay"/>
-                            <constraint firstItem="Rnz-OS-0b0" firstAttribute="top" secondItem="fOu-Z4-ve7" secondAttribute="bottom" constant="27" id="b3o-5X-Fiz"/>
-                            <constraint firstItem="Rnz-OS-0b0" firstAttribute="centerX" secondItem="Z0y-q8-r3T" secondAttribute="centerX" id="kw2-aJ-D9R"/>
+                            <constraint firstAttribute="centerX" secondItem="fOu-Z4-ve7" secondAttribute="centerX" id="cD2-SL-fgf"/>
                             <constraint firstItem="fOu-Z4-ve7" firstAttribute="width" secondItem="Z0y-q8-r3T" secondAttribute="width" id="mqv-pz-Icg"/>
                             <constraint firstItem="CaE-uM-0yy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="oAG-qT-d6V"/>
                             <constraint firstAttribute="trailing" secondItem="CaE-uM-0yy" secondAttribute="trailing" id="p0A-gc-ugC"/>
                             <constraint firstAttribute="centerX" secondItem="Z0y-q8-r3T" secondAttribute="centerX" id="rTG-8Z-7yV"/>
                             <constraint firstItem="TR9-ps-Xyx" firstAttribute="top" secondItem="09s-wm-sFL" secondAttribute="bottom" constant="29" id="uCM-jl-UUZ"/>
                             <constraint firstItem="Z0y-q8-r3T" firstAttribute="top" secondItem="09s-wm-sFL" secondAttribute="bottom" constant="78" id="vEH-9y-Ph6"/>
-                            <constraint firstItem="Rnz-OS-0b0" firstAttribute="top" secondItem="fOu-Z4-ve7" secondAttribute="bottom" constant="27" id="wrV-r8-OqU"/>
-                            <constraint firstItem="fOu-Z4-ve7" firstAttribute="width" secondItem="Rnz-OS-0b0" secondAttribute="width" id="y4M-rf-T6t"/>
                             <constraint firstAttribute="centerX" secondItem="C7n-Il-bjp" secondAttribute="centerX" id="zSN-lc-vUl"/>
                         </constraints>
                         <variation key="default">
@@ -198,7 +181,6 @@
                     <connections>
                         <outlet property="facebookButton" destination="fOu-Z4-ve7" id="OUJ-9k-kdZ"/>
                         <outlet property="kmGoal" destination="rxp-U3-txJ" id="c3c-W7-ECn"/>
-                        <outlet property="linkedInButton" destination="Rnz-OS-0b0" id="T3B-lF-w72"/>
                         <outlet property="minutesGoal" destination="J2D-gZ-BYk" id="S1k-2j-OiS"/>
                         <outlet property="startButton" destination="C7n-Il-bjp" id="bvR-ES-k7y"/>
                         <outlet property="twitterButton" destination="Z0y-q8-r3T" id="71B-gO-FFT"/>

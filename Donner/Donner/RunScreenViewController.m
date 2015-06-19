@@ -69,10 +69,12 @@
     self.location = locations.lastObject;
     NSLog(@"%@", self.location.description);
     distanceToTravel -= 0.01;
-    if(distanceToTravel >= [_runDistanceLeft floatValue]-0.5){//to counteract when user first starts and method runs x number of times. x seems to be random
+    NSLog(@"distanceToTravel is: %f", distanceToTravel);
+    if(distanceToTravel >= [_runDistanceLeft floatValue]-0.05){//to counteract when user first starts and method runs x number of times. x seems to be random
         return;
     }
     _distanceLeft.text = [NSString stringWithFormat:@"%.2f", distanceToTravel];
+    _distanceLeft.text = [_distanceLeft.text stringByAppendingString:_distanceUnit];
     if(distanceToTravel <= 0){//less than put just in case
         [self.locationManager stopUpdatingLocation];//user successfully covers distance before time runs out
         [self userVictorious];
