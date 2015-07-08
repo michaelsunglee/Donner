@@ -42,6 +42,14 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;//test and see if this is best accuracy setting
     if([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]){
         [self.locationManager requestAlwaysAuthorization];
+        NSLog(@"SHOULD BE CALLED");
+        CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+        NSLog(@"status is: %d", status);
+        if(status == kCLAuthorizationStatusAuthorizedAlways) {
+            NSLog(@"Called when user accepts location services");
+            [self.locationManager startUpdatingLocation];
+        }
+        
     }
     [self.locationManager startUpdatingLocation];
     //this view is always tracking location/distance travelled so set as delegate
@@ -50,10 +58,19 @@
     self.locationManager.distanceFilter = 10; //in meters
     
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {//need this bc will crash in ios7- otherwise
+//        NSLog(@"SHOULD NEVER BE CALLED");
         [self.locationManager requestWhenInUseAuthorization];
     }
-    [self.locationManager startUpdatingLocation];
-    travelled = false;
+    
+       travelled = false;
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 0){
+        NSLog(@"button index 0");
+    }else if(buttonIndex == 1){
+        NSLog(@"button index 1");
+    }
 }
 
 -(void)userFail{

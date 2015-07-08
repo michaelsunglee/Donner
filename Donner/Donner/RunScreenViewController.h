@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface RunScreenViewController : UIViewController <CLLocationManagerDelegate>
+@interface RunScreenViewController : UIViewController <CLLocationManagerDelegate,
+                                                        UIAlertViewDelegate>
 
 @property (nonatomic) NSString* runTimeLeft;
 @property (nonatomic) NSString* runDistanceLeft;
