@@ -36,40 +36,30 @@
     _minutesLeft = [_runTimeLeft integerValue];
     [self addDistanceUnit];
     [self initiateTimer];
-    [self updateTimer];
     [self updateRunLabel];
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;//test and see if this is best accuracy setting
     if([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]){
         [self.locationManager requestAlwaysAuthorization];
-        NSLog(@"SHOULD BE CALLED");
-        CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
-        NSLog(@"status is: %d", status);
-        if(status == kCLAuthorizationStatusAuthorizedAlways) {
-            NSLog(@"Called when user accepts location services");
-            [self.locationManager startUpdatingLocation];
-        }
-        
     }
-    [self.locationManager startUpdatingLocation];
     //this view is always tracking location/distance travelled so set as delegate
     self.locationManager.delegate = self;
     self.location = [[CLLocation alloc] init];
     self.locationManager.distanceFilter = 10; //in meters
     
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {//need this bc will crash in ios7- otherwise
-//        NSLog(@"SHOULD NEVER BE CALLED");
         [self.locationManager requestWhenInUseAuthorization];
     }
     
        travelled = false;
 }
 
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if(buttonIndex == 0){
-        NSLog(@"button index 0");
-    }else if(buttonIndex == 1){
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{//should only be called when denied location
+    if(buttonIndex == 1){
         NSLog(@"button index 1");
+        NSURL *settingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        [[UIApplication sharedApplication] openURL:settingsURL];
+        [self performSegueWithIdentifier:@"backToMain" sender:nil];//so user is greeted at home not a failed run
     }
 }
 
@@ -96,6 +86,22 @@
         [self.locationManager stopUpdatingLocation];//user successfully covers distance before time runs out
         [self userVictorious];
         return;
+    }
+}
+
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
+    if(status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse){
+        NSLog(@"Called when user accepts location services");
+        [self.locationManager startUpdatingLocation];
+        [self updateTimer];
+    }else if(status == kCLAuthorizationStatusDenied){//user denies location services
+        NSLog(@"user denies location");
+        UIAlertView *accessDeniedAlert = [[UIAlertView alloc] initWithTitle:@"To allow location services, please visit your device's settings"
+                                                                    message:@"Cancelling will render this app useless"
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"Cancel"
+                                                          otherButtonTitles:@"Settings", nil];
+        [accessDeniedAlert show];
     }
 }
 
