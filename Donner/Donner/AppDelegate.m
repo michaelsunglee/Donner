@@ -23,6 +23,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     NSLog(@"didFinishLaunchingWithOptions");
+    [FBSession.activeSession closeAndClearTokenInformation];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [Fabric with:@[TwitterKit]];
 
@@ -54,6 +55,7 @@
 }
 
 -(void)facebookAuth{
+
     NSLog(@"facebookAuth method called");
     NSString *ParseApplicationId = [dictionary objectForKey:@"parseApplicationId"];
     NSString *ParseClientKey = [dictionary objectForKey:@"parseClientKey"];
@@ -62,11 +64,45 @@
     [Parse setApplicationId:ParseApplicationId
                   clientKey:ParseClientKey];
      [PFFacebookUtils initializeFacebook];
-     
-     
+    
+    
      //Trigger method for Facebook Auth
      NSArray *permissionsArray = @[@"user_about_me"];
-     
+    if([[FBSession activeSession] isOpen]){
+        if([[[FBSession activeSession] permissions] indexOfObject:@"publish_actions"] == NSNotFound){
+            [[FBSession activeSession] requestNewPublishPermissions:[NSArray arrayWithObject:@"publish_actions"] defaultAudience:FBSessionDefaultAudienceFriends completionHandler:^(FBSession *session, NSError *error) {
+            }];
+        }
+    }else{
+        [FBSession openActiveSessionWithPublishPermissions:[NSArray arrayWithObject:@"publish_actions"]
+                                           defaultAudience:FBSessionDefaultAudienceOnlyMe
+                                              allowLoginUI:YES
+                                         completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                                             if (!error && status == FBSessionStateOpen) {
+                                                 NSLog(@"new user");
+                                             }else{
+                                                 NSLog(@"error2");
+                                             }
+                                         }];
+    }
+    //    PFUser *user = [PFUser user];
+    //    user.username = @"my name";
+    //    user.password = @"my pass";
+    //    user.email = @"email@example.com";
+    //
+    //    // other fields can be set if you want to save more information
+    //    user[@"phone"] = @"650-555-0000";
+    /*
+     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+     if (!error) {
+     // Hooray! Let them use the app now.
+     } else {
+     NSString *errorString = [error userInfo][@"error"];
+     // Show the errorString somewhere and let the user try again.
+     }
+     }];
+     */
+    
      [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
      if (!user) {
          NSLog(@"Uh oh. The user cancelled the Facebook login.");
@@ -76,15 +112,7 @@
          NSLog(@"User logged in through Facebook!");
      }
      }];
-    
-    [PFFacebookUtils reauthorizeUser:[PFUser currentUser]
-     withPublishPermissions:@[@"publish_actions"]
-     audience:FBSessionDefaultAudienceFriends
-     block:^(BOOL succeeded, NSError *error) {
-     if (succeeded) {
-     // Your app now has publishing permissions for the user
-     }
-     }];
+    NSLog(@"after1");
 }
 
 - (BOOL)application:(UIApplication *)application

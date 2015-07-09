@@ -36,7 +36,7 @@
     _minutesLeft = [_runTimeLeft integerValue];
     [self addDistanceUnit];
     [self initiateTimer];
-    [self updateRunLabel];
+//    [self updateRunLabel];
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;//test and see if this is best accuracy setting
     if([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]){

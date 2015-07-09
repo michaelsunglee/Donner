@@ -34,14 +34,7 @@
 @synthesize userDefaults;
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    PFUser *user = [PFUser user];
-//    user.username = @"my name";
-//    user.password = @"my pass";
-//    user.email = @"email@example.com";
-//    
-//    // other fields can be set if you want to save more information
-//    user[@"phone"] = @"650-555-0000";
-    
+
     
     self.kmGoal.delegate = self;
     self.minutesGoal.delegate = self;
@@ -51,16 +44,7 @@
     [self.view addGestureRecognizer:userTap];
     
     _startButton.enabled = NO;
-    /*
-     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {
-            // Hooray! Let them use the app now.
-        } else {
-            NSString *errorString = [error userInfo][@"error"];
-            // Show the errorString somewhere and let the user try again.
-        }
-    }];
-     */
+
     userDefaults = [NSUserDefaults standardUserDefaults];
     if([[userDefaults objectForKey:@"Unit"] isEqualToString:@"Mi"]){
         _unit.selectedSegmentIndex = 0;
@@ -120,7 +104,6 @@
 -(IBAction)didPressFacebookButton:(id)sender{
     [_facebookButton didPressButton:_facebookButton];
     [[[UIApplication sharedApplication] delegate] performSelector:@selector(facebookAuth)];
-    //    [[[UIApplication sharedApplication] delegate] facebookAuth];
 }
 
 -(IBAction)unwindSegue:(UIStoryboardSegue *)segue{
