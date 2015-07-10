@@ -52,6 +52,10 @@
         NSLog(@"starting posn");
         _unit.selectedSegmentIndex = 1;
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didPressTwitterButton:)
+                                                 name:@"didPressTwitterButton"
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -98,12 +102,16 @@
 
 -(IBAction)didPressTwitterButton:(id)sender{
     [_twitterButton didPressButton:_twitterButton];
-    [[[UIApplication sharedApplication] delegate] performSelector:@selector(twitterAuth)];
+    if(_twitterButton.state != 1){
+        [[[UIApplication sharedApplication] delegate] performSelector:@selector(twitterAuth)];
+    }
 }
 
 -(IBAction)didPressFacebookButton:(id)sender{
     [_facebookButton didPressButton:_facebookButton];
-    [[[UIApplication sharedApplication] delegate] performSelector:@selector(facebookAuth)];
+    if(_facebookButton.state != 1){
+        [[[UIApplication sharedApplication] delegate] performSelector:@selector(facebookAuth)];
+    }
 }
 
 -(IBAction)unwindSegue:(UIStoryboardSegue *)segue{

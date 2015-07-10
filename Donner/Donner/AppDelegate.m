@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "UIButton+buttonPressed.h"
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
 #import <FacebookSDK/FacebookSDK.h>
@@ -36,6 +37,14 @@
 -(void)twitterAuth{
     //Trigger method for Twitter Auth
     NSLog(@"twitterAuth method called");
+    NSString *ParseApplicationId = [dictionary objectForKey:@"parseApplicationId"];
+    NSString *ParseClientKey = [dictionary objectForKey:@"parseClientKey"];
+    
+    
+    [Parse setApplicationId:ParseApplicationId
+                  clientKey:ParseClientKey];
+    
+    
     NSString *FabricConsumerKey = [dictionary objectForKey:@"twitterConsumerKey"];
     NSString *FabricSecretKey = [dictionary objectForKey:@"twitterSecretKey"];
     [PFTwitterUtils initializeWithConsumerKey:FabricConsumerKey
@@ -44,6 +53,7 @@
     [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
     if (!user) {
         NSLog(@"Uh oh. The user cancelled the Twitter login.");
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"didPressTwitterButton" object:nil];
         return;
     } else if (user.isNew) {
         NSLog(@"User signed up and logged in with Twitter!");
