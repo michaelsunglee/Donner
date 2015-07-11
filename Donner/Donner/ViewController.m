@@ -15,8 +15,6 @@
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-//#define AppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
-
 @interface ViewController ()
 {
     BOOL timerStart;
@@ -34,7 +32,6 @@
 @synthesize userDefaults;
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     
     self.kmGoal.delegate = self;
     self.minutesGoal.delegate = self;
@@ -44,6 +41,7 @@
     [self.view addGestureRecognizer:userTap];
     
     _startButton.enabled = NO;
+    self.punishmentMessage.delegate = self;
 
     userDefaults = [NSUserDefaults standardUserDefaults];
     if([[userDefaults objectForKey:@"Unit"] isEqualToString:@"Mi"]){
@@ -56,13 +54,16 @@
                                              selector:@selector(didPressTwitterButton:)
                                                  name:@"didPressTwitterButton"
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardFrameDidChange:)
+                                                 name:UIKeyboardWillChangeFrameNotification
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 -(void)singleTap:(UITapGestureRecognizer *)recognizer
 {
@@ -118,6 +119,37 @@
     
 }
 
+-(void)keyboardFrameDidChange:(NSNotification *)notification{
+    //animation for raising view when keyboard appears (no need for scroll view)
+    
+    CGRect keyboardEndFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGRect keyboardBeginFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+    UIViewAnimationCurve animationCurve = [[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
+    NSTimeInterval animationDuration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] integerValue];
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    [UIView setAnimationCurve:animationCurve];
+    
+    CGRect newFrame = self.view.frame;
+    CGRect keyboardFrameEnd = [self.view convertRect:keyboardEndFrame toView:nil];
+    CGRect keyboardFrameBegin = [self.view convertRect:keyboardBeginFrame toView:nil];
+    
+    newFrame.origin.y -= (keyboardFrameBegin.origin.y - keyboardFrameEnd.origin.y);
+    self.view.frame = newFrame;
+    
+    [UIView commitAnimations];
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    
+    if(textField.tag == 100){//punishment textfield
+//        NSDictionary *info =
+//        float kbHeight =
+        NSLog(@"center2 is X:%f, Y:%f", self.view.center.x, self.view.center.y);
+//        self.view.center = CGPointMake(self.view.center.x, self.view.center.y-88);
+    }
+}
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     NSLog(@"user ends editing uitextfield");
     if(![_kmGoal.text isEqualToString:@""] && ![_minutesGoal.text isEqualToString:@""]){

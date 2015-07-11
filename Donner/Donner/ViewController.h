@@ -14,10 +14,10 @@
 
 @property (nonatomic, strong) IBOutlet UITextField *kmGoal;
 @property (nonatomic, strong) IBOutlet UITextField *minutesGoal;
+@property (nonatomic, strong) IBOutlet UITextField *punishmentMessage;
 @property (nonatomic, strong) IBOutlet UIButton *startButton;
 @property (nonatomic, strong) IBOutlet UIButton *twitterButton;
 @property (nonatomic, strong) IBOutlet UIButton *facebookButton;
-@property (nonatomic, strong) IBOutlet UIButton *linkedInButton;
 @property (nonatomic, strong) IBOutlet UISegmentedControl *unit;
 @property (nonatomic, strong) NSDate *startTime;
 @property (nonatomic, readonly, retain) UIImage *currentBackgroundImage;

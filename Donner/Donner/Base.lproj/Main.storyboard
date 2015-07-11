@@ -150,19 +150,30 @@
                                     <constraint firstAttribute="width" constant="293.5" id="zfh-w2-ETu"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="Enter Punishment Message" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fUa-Km-ifx">
+                                <rect key="frame" x="36" y="399" width="528" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="lVM-Mb-naO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.92549019607843142" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="right" secondItem="CaE-uM-0yy" secondAttribute="rightMargin" id="72r-QR-WhJ"/>
                             <constraint firstItem="CaE-uM-0yy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="8mA-vp-PqV"/>
+                            <constraint firstItem="fUa-Km-ifx" firstAttribute="top" secondItem="fOu-Z4-ve7" secondAttribute="bottom" constant="20" id="9oY-pL-qNq"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="C7n-Il-bjp" secondAttribute="bottom" constant="10" id="A8g-l3-JTH"/>
                             <constraint firstItem="fOu-Z4-ve7" firstAttribute="top" secondItem="Z0y-q8-r3T" secondAttribute="bottom" constant="27" id="ChC-wC-ulq"/>
                             <constraint firstItem="09s-wm-sFL" firstAttribute="top" secondItem="CaE-uM-0yy" secondAttribute="bottom" constant="3" id="E7B-qW-tNT"/>
                             <constraint firstItem="fOu-Z4-ve7" firstAttribute="height" secondItem="Z0y-q8-r3T" secondAttribute="height" id="M1i-oT-gcZ"/>
                             <constraint firstItem="CaE-uM-0yy" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="R9b-x5-kgp"/>
+                            <constraint firstItem="fUa-Km-ifx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="RMO-ci-Ewe"/>
                             <constraint firstAttribute="centerX" secondItem="09s-wm-sFL" secondAttribute="centerX" constant="-0.75" id="XCt-Ew-NEL"/>
                             <constraint firstItem="TR9-ps-Xyx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="Xpu-XT-7Ay"/>
                             <constraint firstAttribute="centerX" secondItem="fOu-Z4-ve7" secondAttribute="centerX" id="cD2-SL-fgf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fUa-Km-ifx" secondAttribute="trailing" constant="20" id="edv-RF-7Dx"/>
                             <constraint firstItem="fOu-Z4-ve7" firstAttribute="width" secondItem="Z0y-q8-r3T" secondAttribute="width" id="mqv-pz-Icg"/>
                             <constraint firstItem="CaE-uM-0yy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="oAG-qT-d6V"/>
                             <constraint firstAttribute="trailing" secondItem="CaE-uM-0yy" secondAttribute="trailing" id="p0A-gc-ugC"/>
@@ -182,6 +193,7 @@
                         <outlet property="facebookButton" destination="fOu-Z4-ve7" id="OUJ-9k-kdZ"/>
                         <outlet property="kmGoal" destination="rxp-U3-txJ" id="c3c-W7-ECn"/>
                         <outlet property="minutesGoal" destination="J2D-gZ-BYk" id="S1k-2j-OiS"/>
+                        <outlet property="punishmentMessage" destination="fUa-Km-ifx" id="viK-FO-dIh"/>
                         <outlet property="startButton" destination="C7n-Il-bjp" id="bvR-ES-k7y"/>
                         <outlet property="twitterButton" destination="Z0y-q8-r3T" id="71B-gO-FFT"/>
                         <outlet property="unit" destination="GSK-H9-J8T" id="uGe-8H-ctw"/>
@@ -189,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="287" y="337"/>
+            <point key="canvasLocation" x="284" y="391"/>
         </scene>
         <!--Run Screen View Controller-->
         <scene sceneID="gd6-e2-nAT">
@@ -296,7 +308,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VJI-hO-S7P" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="9re-3L-NvW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="959" y="337"/>
+            <point key="canvasLocation" x="964" y="391"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.20392156859999999" green="0.70196078429999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
