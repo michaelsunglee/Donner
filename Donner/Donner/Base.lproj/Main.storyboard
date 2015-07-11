@@ -46,7 +46,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0y-q8-r3T">
-                                <rect key="frame" x="220" y="272" width="160" height="40"/>
+                                <rect key="frame" x="220" y="244" width="160" height="40"/>
                                 <color key="backgroundColor" red="0.63529411764705879" green="0.63529411764705879" blue="0.63529411764705879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xWy-BT-Wxv"/>
@@ -61,7 +61,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOu-Z4-ve7">
-                                <rect key="frame" x="220" y="339" width="160" height="40"/>
+                                <rect key="frame" x="220" y="311" width="160" height="40"/>
                                 <color key="backgroundColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="ry4-4p-pxU"/>
@@ -82,7 +82,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR ELSE:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TR9-ps-Xyx">
-                                <rect key="frame" x="31" y="223" width="123" height="33"/>
+                                <rect key="frame" x="31" y="199" width="123" height="33"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -151,7 +151,7 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="Enter Punishment Message" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fUa-Km-ifx">
-                                <rect key="frame" x="36" y="399" width="528" height="90"/>
+                                <rect key="frame" x="36" y="371" width="528" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="lVM-Mb-naO"/>
                                 </constraints>
@@ -178,8 +178,8 @@
                             <constraint firstItem="CaE-uM-0yy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="oAG-qT-d6V"/>
                             <constraint firstAttribute="trailing" secondItem="CaE-uM-0yy" secondAttribute="trailing" id="p0A-gc-ugC"/>
                             <constraint firstAttribute="centerX" secondItem="Z0y-q8-r3T" secondAttribute="centerX" id="rTG-8Z-7yV"/>
-                            <constraint firstItem="TR9-ps-Xyx" firstAttribute="top" secondItem="09s-wm-sFL" secondAttribute="bottom" constant="29" id="uCM-jl-UUZ"/>
-                            <constraint firstItem="Z0y-q8-r3T" firstAttribute="top" secondItem="09s-wm-sFL" secondAttribute="bottom" constant="78" id="vEH-9y-Ph6"/>
+                            <constraint firstItem="TR9-ps-Xyx" firstAttribute="top" secondItem="09s-wm-sFL" secondAttribute="bottom" constant="5" id="uCM-jl-UUZ"/>
+                            <constraint firstItem="Z0y-q8-r3T" firstAttribute="top" secondItem="09s-wm-sFL" secondAttribute="bottom" constant="50" id="vEH-9y-Ph6"/>
                             <constraint firstAttribute="centerX" secondItem="C7n-Il-bjp" secondAttribute="centerX" id="zSN-lc-vUl"/>
                         </constraints>
                         <variation key="default">

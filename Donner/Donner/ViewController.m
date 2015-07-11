@@ -70,6 +70,7 @@
     NSLog(@"user tapped");
     [_kmGoal endEditing:YES];
     [_minutesGoal endEditing:YES];
+    [self.punishmentMessage endEditing:YES];
 }
 
 -(IBAction)wantTwitterShame:(id)sender
@@ -121,33 +122,35 @@
 
 -(void)keyboardFrameDidChange:(NSNotification *)notification{
     //animation for raising view when keyboard appears (no need for scroll view)
-    
-    CGRect keyboardEndFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    CGRect keyboardBeginFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-    UIViewAnimationCurve animationCurve = [[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
-    NSTimeInterval animationDuration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] integerValue];
-    
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:animationDuration];
-    [UIView setAnimationCurve:animationCurve];
-    
-    CGRect newFrame = self.view.frame;
-    CGRect keyboardFrameEnd = [self.view convertRect:keyboardEndFrame toView:nil];
-    CGRect keyboardFrameBegin = [self.view convertRect:keyboardBeginFrame toView:nil];
-    
-    newFrame.origin.y -= (keyboardFrameBegin.origin.y - keyboardFrameEnd.origin.y);
-    self.view.frame = newFrame;
-    
-    [UIView commitAnimations];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenHeight = screenRect.size.height;
+    NSLog(@"MY HEIGHT IS: %f", screenHeight);
+        if([self.punishmentMessage isEditing] && screenHeight != 736){
+        //only when punishment textfield is editing and not an iphone 6+
+        CGRect keyboardEndFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+        CGRect keyboardBeginFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+        UIViewAnimationCurve animationCurve = [[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
+        NSTimeInterval animationDuration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] integerValue];
+        
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:animationDuration];
+        [UIView setAnimationCurve:animationCurve];
+        
+        CGRect newFrame = self.view.frame;
+        CGRect keyboardFrameEnd = [self.view convertRect:keyboardEndFrame toView:nil];
+        CGRect keyboardFrameBegin = [self.view convertRect:keyboardBeginFrame toView:nil];
+        
+        newFrame.origin.y -= (keyboardFrameBegin.origin.y - keyboardFrameEnd.origin.y);
+        self.view.frame = newFrame;
+        
+        [UIView commitAnimations];
+    }
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     
     if(textField.tag == 100){//punishment textfield
-//        NSDictionary *info =
-//        float kbHeight =
         NSLog(@"center2 is X:%f, Y:%f", self.view.center.x, self.view.center.y);
-//        self.view.center = CGPointMake(self.view.center.x, self.view.center.y-88);
     }
 }
 -(void)textFieldDidEndEditing:(UITextField *)textField{
